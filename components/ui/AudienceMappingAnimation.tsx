@@ -28,8 +28,11 @@ const platforms: Platform[] = [
 { imagePath: "/images/logos/reddit.png", label: "Reddit", width: 48, height: 48 }];
 
 
+// Responsive sizes
 const ICON_SIZE = 40;
 const PLATFORM_SIZE = 100;
+const MOBILE_ICON_SIZE = 30;
+const MOBILE_PLATFORM_SIZE = 70;
 
 export function AudienceMappingAnimation({
   loop = false,
@@ -62,17 +65,17 @@ export function AudienceMappingAnimation({
   const progress = (activeIndex + 1) / totalIcons * 100;
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-12 bg-white rounded-2xl border border-[#eff3f4] shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+    <div className="w-full max-w-4xl mx-auto p-4 sm:p-8 md:p-12 bg-white rounded-xl sm:rounded-2xl border border-[#eff3f4] shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="space-y-16">
 
-        <h2 className="text-5xl font-bold text-center text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900">
           Intro kartlägger din målgrupp
         </h2>
 
-        <div className="grid grid-cols-3 gap-x-32 gap-y-16 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 sm:gap-x-8 md:gap-x-16 lg:gap-x-32 gap-y-6 sm:gap-y-10 md:gap-y-16 justify-items-center">
           {platforms.map((platform, index) =>
           <motion.div
             key={index}
@@ -82,7 +85,7 @@ export function AudienceMappingAnimation({
             }}>
 
               <motion.div
-              className={`relative rounded-full bg-gray-50 w-[${PLATFORM_SIZE}px] h-[${PLATFORM_SIZE}px] flex items-center justify-center`}
+              className={`relative rounded-full bg-gray-50 w-[70px] h-[70px] sm:w-[85px] sm:h-[85px] md:w-[${PLATFORM_SIZE}px] md:h-[${PLATFORM_SIZE}px] flex items-center justify-center`}
               animate={{
                 boxShadow:
                 activeIndex === index ?
@@ -96,10 +99,11 @@ export function AudienceMappingAnimation({
                 alt={platform.label}
                 width={ICON_SIZE}
                 height={ICON_SIZE}
+                sizes="(max-width: 640px) 30px, (max-width: 768px) 35px, 40px"
                 className="object-contain p-2" />
 
               </motion.div>
-              <span className="mt-4 text-base font-medium text-gray-600">{platform.label}</span>
+              <span className="mt-2 sm:mt-3 md:mt-4 text-xs sm:text-sm md:text-base font-medium text-gray-600">{platform.label}</span>
             </motion.div>
           )}
         </div>

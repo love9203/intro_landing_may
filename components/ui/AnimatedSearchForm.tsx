@@ -140,13 +140,13 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
 
   return (
     <motion.form 
-      className="w-full space-y-4 max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg"
+      className="w-full space-y-4 max-w-3xl mx-auto p-4 sm:p-6 bg-white rounded-lg shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       onSubmit={handleSubmit}
     >
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-3 sm:space-y-4">
         {placeholders.map((placeholder, index) => (
           <div key={index}>
             <input
@@ -164,7 +164,7 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
                 newValues[index] = e.target.value;
                 setFormValues(newValues);
               }}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               readOnly={index === currentField && triggerAnimation}
             />
           </div>
@@ -173,7 +173,7 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
       
       <Button 
         type="submit" 
-        className="w-full px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
+        className="w-full px-4 py-2 mt-2 sm:mt-4 bg-blue-600 text-white font-medium text-sm sm:text-base rounded-md hover:bg-blue-700 transition-colors"
       >
         Find Candidates
       </Button>

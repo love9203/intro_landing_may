@@ -65,13 +65,13 @@ export default function Inbox({
   return (
     <div
       className={cn(
-        "rounded-3xl shadow-lg bg-gray-50/50 flex flex-col h-[450px] w-full p-3",
+        "rounded-2xl sm:rounded-3xl shadow-lg bg-gray-50/50 flex flex-col h-[350px] sm:h-[450px] w-full p-2 sm:p-3",
         className
       )}>
 
       {/* header */}
-      <div className="px-4 py-2 mb-3 flex items-center justify-between">
-        <h3 className="text-base font-medium">Inbox</h3>
+      <div className="px-3 sm:px-4 py-1 sm:py-2 mb-2 sm:mb-3 flex items-center justify-between">
+        <h3 className="text-sm sm:text-base font-medium">Inbox</h3>
         <span className="text-xs font-semibold bg-primary text-primary-foreground rounded-full px-2 py-0.5">
           {messages.filter((m) => !m.read).length} new
         </span>
@@ -80,7 +80,7 @@ export default function Inbox({
       {/* list */}
       <ul className="flex-1 overflow-y-auto" role="list">
         {messages.length === 0 ?
-        <li className="flex items-center justify-center h-full text-muted-foreground italic">
+        <li className="flex items-center justify-center h-full text-muted-foreground italic text-sm sm:text-base">
             No messages yet
           </li> :
 
@@ -105,10 +105,10 @@ export default function Inbox({
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") onMessageClick(m);
             }}
-            className="flex gap-4 px-4 py-3 border-b hover:bg-accent/40 focus-visible:ring-2 focus-visible:ring-ring outline-none">
+            className="flex gap-2 sm:gap-4 px-2 sm:px-4 py-2 sm:py-3 border-b hover:bg-accent/40 focus-visible:ring-2 focus-visible:ring-ring outline-none">
 
                 {/* left controls */}
-                <div className="flex flex-col items-center gap-2 pt-1">
+                <div className="flex flex-col items-center gap-1 sm:gap-2 pt-1">
                   <Checkbox
                 aria-label="Select message"
                 onClick={(e) => e.stopPropagation()} />
@@ -138,9 +138,9 @@ export default function Inbox({
                 {/* body */}
                 <div className="flex-1 min-w-0">
                   <div className="flex justify-between">
-                    <div className="flex-1 min-w-0 flex gap-2">
-                      <span className="font-medium truncate">{m.name}</span>
-                      <span className="text-muted-foreground truncate">- {m.subject}</span>
+                    <div className="flex-1 min-w-0 flex gap-1 sm:gap-2">
+                      <span className="font-medium truncate text-xs sm:text-sm">{m.name}</span>
+                      <span className="text-muted-foreground truncate text-xs sm:text-sm">- {m.subject}</span>
                     </div>
                     <span className="text-xs text-muted-foreground shrink-0">
                       {new Date(m.sentAt).toLocaleTimeString([], {
@@ -149,7 +149,7 @@ export default function Inbox({
                   })}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
+                  <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">
                     {m.preview}
                   </p>
                 </div>
