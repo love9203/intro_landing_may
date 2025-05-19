@@ -44,9 +44,9 @@ export function FeatureSteps({
             {features.map((feature, index) =>
             <motion.div
               key={index}
-              className="flex items-start gap-6 md:gap-8 cursor-pointer"
+              className="flex items-start gap-6 md:gap-8 cursor-pointer relative z-10 p-2 hover:bg-gray-50/50 rounded-md transition-colors"
               initial={{ opacity: 0.3 }}
-              animate={{ opacity: index === currentFeature ? 1 : 0.3 }}
+              animate={{ opacity: index === currentFeature ? 1 : 0.5 }}
               transition={{ duration: 0.5 }}
               onClick={() => handleStepClick(index)}>
 
@@ -79,7 +79,7 @@ export function FeatureSteps({
 
           <div
             className={cn(
-              `order-1 md:order-2 relative h-[350px] md:h-[450px] lg:${imageHeight} overflow-hidden rounded-lg md:self-center`
+              `order-1 md:order-2 relative h-[350px] md:h-[450px] lg:${imageHeight} overflow-hidden rounded-lg md:self-center z-0`
             )}>
 
             <AnimatePresence mode="wait">

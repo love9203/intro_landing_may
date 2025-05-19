@@ -59,7 +59,7 @@ const features = [
     customContent: (
       <div className="absolute inset-0 bg-background flex items-center justify-center py-16 sm:py-20 px-6 sm:px-8 overflow-visible">
         <div className="w-full max-w-[90%] sm:max-w-[85%] md:max-w-[80%] lg:max-w-[75%]">
-          <AnimatedSearchForm />
+          <AnimatedSearchForm triggerAnimation={true} />
         </div>
       </div>
     )
