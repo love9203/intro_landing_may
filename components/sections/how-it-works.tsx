@@ -67,7 +67,7 @@ const features = [
   { 
     step: 'Step 2',
     title: 'Intro kartlägger din kandidatpool',
-    content: 'Vi aggreggerar data från 20+ relevanta källor. Vi hittar även dolda kandidater.',
+    content: 'Vi aggregerar data från 36+ relevanta källor. Vi hittar även dolda kandidater.',
     customContent: (
       <div className="absolute inset-0 bg-background flex items-center justify-center py-14 sm:py-16 px-3 sm:px-4">
         <div className="w-full max-w-[85%] sm:max-w-[80%] md:max-w-[75%] lg:max-w-[70%] pt-8">
@@ -106,7 +106,7 @@ export function HowItWorks() {
   return (
     <FeatureSteps 
       features={features}
-      title="Talent Acquisition med Intro"
+      title="Go-To-Talent med Intro"
       imageHeight="h-[500px]"
     />
   )

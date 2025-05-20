@@ -29,11 +29,11 @@ function Hero() {
       <div className="container mx-auto">
         <div className="flex gap-2 items-center justify-center flex-col">
           <div>
-            <Button variant="secondary" size="sm" className="gap-4 mb-2">
+            <Button variant="secondary" size="sm" className="gap-4 mb-5">
               Läs vår artikel om Go-To-Talent <MoveRight className="w-4 h-4" />
             </Button>
           </div>
-          <div className="flex gap-2 flex-col mt-2 px-4">
+          <div className="flex gap-2 flex-col px-4">
             <h1 className="text-[42px] sm:text-[46px] md:text-[68px] max-w-2xl tracking-tighter text-center font-regular leading-[1.1]">
               <span className="text-spektr-cyan-50">Din heltäckande lösning för att växa ditt konsultbolag inom</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-2 md:pt-0">
@@ -62,12 +62,11 @@ function Hero() {
               </span>
             </h1>
 
-            <p className="!text-[16px] !md:text-xl leading-tight tracking-tight text-muted-foreground max-w-2xl text-center mt-1 mb-2" style={{fontSize: '16px'}}>
-              Att rekrytera seniora kandidater är tufft. Intro förenklar detta genom att göra en komplett kartläggning av din kandidatpool. Enbart relevanta kandidater.
-              3x konvertering jämfört med traditionella metoder.
+            <p className="!text-[16px] !md:text-xl leading-tight tracking-tight text-muted-foreground max-w-2xl text-center mt-4 mb-4" style={{fontSize: '16px'}}>
+            Att lyckas rekrytera seniora kandidater är tufft. Intro förenklar detta genom ett helt nytt sätt att tänka med rekrytering - Go-To-Talent™️.  Hitta gömda kandidater, bygg awareness & konvertera 3x jämfört med traditionella metoder. 
             </p>
           </div>
-          <div className="flex flex-row gap-3 mt-2">
+          <div className="flex flex-row gap-3 mt-4 mb-[20px]">
             <Button size="lg" className="gap-4" variant="outline" asChild>
               <Link href="https://search.intro.io/" target="_blank" rel="noopener noreferrer">
                 Testa ett sök <Search className="w-4 h-4" />

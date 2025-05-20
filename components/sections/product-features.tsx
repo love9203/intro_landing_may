@@ -3,7 +3,7 @@ import { Feature108 } from "../ui/feature-108";
 
 const demoData = {
   badge: "Features",
-  heading: "Möt din AI TA-partner. Tillgänglig 24/7. Redo att göra allt.",
+  heading: "Intro Go-To-Talent är drivet av männsikor med AI.",
   description: "Hitta kandidater du tidigare inte upptäckt.",
   tabs: [
     {

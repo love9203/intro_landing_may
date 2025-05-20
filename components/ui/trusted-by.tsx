@@ -27,7 +27,7 @@ export function TrustedBy({ className }: TrustedByProps) {
   };
 
   return (
-    <div className={cn("w-full px-4 pt-8 pb-16", className)}>
+    <div className={cn("w-full px-4 pt-0 pb-16 mt-[20px]", className)}>
       <div className="max-w-7xl mx-auto">
         <h3 className="text-center text-sm text-gray-600 mb-6">
         Skapat för konsultchefer med mycket på sitt bord

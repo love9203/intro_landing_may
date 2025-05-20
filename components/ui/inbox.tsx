@@ -65,26 +65,28 @@ export default function Inbox({
   return (
     <div
       className={cn(
-        "rounded-2xl sm:rounded-3xl shadow-lg bg-gray-50/50 flex flex-col h-[350px] sm:h-[450px] w-full p-2 sm:p-3",
+        "rounded-2xl sm:rounded-3xl shadow-lg bg-gray-50/50 h-[340px] sm:h-[440px] w-full",
         className
       )}>
+      {/* Container with padding - similar to AnimatedSearchForm approach */}
+      <div className="flex flex-col h-full p-4 sm:p-5">
+        {/* header */}
+        <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <h3 className="text-sm sm:text-base font-medium">Inbox</h3>
+          <span className="text-xs font-semibold bg-primary text-primary-foreground rounded-full px-2 py-0.5">
+            {messages.filter((m) => !m.read).length} new
+          </span>
+        </div>
 
-      {/* header */}
-      <div className="px-3 sm:px-4 py-1 sm:py-2 mb-2 sm:mb-3 flex items-center justify-between">
-        <h3 className="text-sm sm:text-base font-medium">Inbox</h3>
-        <span className="text-xs font-semibold bg-primary text-primary-foreground rounded-full px-2 py-0.5">
-          {messages.filter((m) => !m.read).length} new
-        </span>
-      </div>
-
-      {/* list */}
-      <ul className="flex-1 overflow-y-auto" role="list">
+        {/* list */}
+        <div className="flex-1 overflow-hidden rounded-lg">
+          <ul className="h-full overflow-y-auto" role="list">
         {messages.length === 0 ?
         <li className="flex items-center justify-center h-full text-muted-foreground italic text-sm sm:text-base">
             No messages yet
           </li> :
 
-        <AnimatePresence initial={true}>
+        <AnimatePresence initial={true} mode="sync">
             {messages.map((m) =>
           <motion.li
             key={m.id}
@@ -157,7 +159,10 @@ export default function Inbox({
           )}
           </AnimatePresence>
         }
-      </ul>
-    </div>);
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 
 }
