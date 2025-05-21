@@ -132,7 +132,7 @@ const PricingSection = () => {
               {plan.name === 'Enterprise' && 'En helt anpassad lösning med obegränsat antal användare och roller – skräddarsydd efter din verksamhets unika behov.'}
             </p>
             <button
-            className="mt-6 w-full rounded-lg px-4 py-2.5 text-sm font-semibold transition bg-indigo-600 text-white hover:bg-indigo-700">
+            className="mt-6 w-full rounded-lg px-4 py-2.5 text-sm font-semibold transition bg-black text-white hover:bg-gray-800">
 
               Kontakta oss
             </button>

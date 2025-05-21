@@ -1,6 +1,6 @@
 export default function TermsPage() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4 sm:px-6 md:px-8">
       <div className="flex flex-col items-center justify-center py-12 text-center">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
           Terms
@@ -10,32 +10,23 @@ export default function TermsPage() {
         </p>
       </div>
       
-      <div className="prose prose-lg max-w-[900px] mx-auto pb-20 [&>h2]:mt-16 [&>h2]:mb-8 [&>h3]:mt-8 [&>h3]:mb-4">
+      <div className="prose prose-lg max-w-[900px] mx-auto pb-20 [&>h2]:mt-8 [&>h2]:mb-4 [&>h2]:text-3xl [&>h2]:font-bold [&>h3]:mt-4 [&>h3]:mb-4 [&>p]:my-4 text-left">
         <h2>Agreement</h2>
         <p>
-          This Agreement (the &quot;Agreement&quot; or &quot;TOS&quot;) is between us, Intro (Introfied AB) (&quot;Intro&quot;, &quot;we&quot;, &quot;our&quot; or &quot;us&quot;, &quot;Intro representative&quot; etc.) and you, the Customer as applicable. References to &quot;Customer&quot; and &quot;you&quot; include any employer, client or other party you may be acting for in accessing Intro.io (the &quot;Site&quot;). You are the &quot;Customer&quot; under this Agreement, Intro&apos;s Privacy Policy and Data Processing Agreement (&quot;DPA&quot;; in Swedish Biträdesavtal) if you by clicking or tapping on a button indicating your acceptance of this Agreement, by executing a document that references this Agreement, or by using the Services. If you don&apos;t agree with any provision of these Terms of Service, you may not use the Site or the Services. If you are an organization, the individual who agrees to this Agreement on your behalf must have the authority to bind you to this Agreement.
+          This Agreement (the &quot;Agreement&quot; or &quot;TOS&quot;) is between us, Intro (Introfied AB) (&quot;Intro&quot;, &quot;we&quot;, &quot;our&quot; or &quot;us&quot;, &quot;Intro representative&quot; etc.) and you, the Customer as applicable. References to &quot;Customer&quot; and &quot;you&quot; include any employer, client or other party you may be acting for in accessing Intro.io (the &quot;Site&quot;). You are the &quot;Customer&quot; under this Agreement, Intro&apos;s <a href="/privacy_policy" className="text-blue-600 hover:underline">Privacy Policy</a> and <a href="/dpa" className="text-blue-600 hover:underline">Data Processing Agreement</a> (&quot;DPA&quot;; in Swedish Biträdesavtal) if you by clicking or tapping on a button indicating your acceptance of this Agreement, by executing a document that references this Agreement, or by using the Services. If you don&apos;t agree with any provision of these Terms of Service, you may not use the Site or the Services. If you are an organization, the individual who agrees to this Agreement on your behalf must have the authority to bind you to this Agreement.
         </p>
-        <br />
         <p>
           The Site provides services to help connect Intro&apos;s Customers with Candidates (the &quot;Services&quot; or the &quot;Service&quot;). Both the Customer and the Candidate can exchange information with one another through the Site in various ways, such as sending emails, obtain information about another through the Site or but not limited to if Intro via an automated message introduce a Candidate to the Customer over email. &quot;Candidate&quot; means a profile of a real person whose identity and contact details (including but not limited to an email address, social links or a phone number) are listed.
         </p>
-        <br />
-
         <p>
           &quot;Information&quot; means a Candidate&apos;s identity or contact details (email address, social links or phone number). &quot;introduce&quot; means an email is being sent out by means initiated via Intro&apos;s Services from the email address provided by the Customer to a Candidate.
         </p>
 
         <h2>Services</h2>
-        <h3 className="uppercase">AVAILABILITY</h3>
-        <p>
-          The Service is provided &quot;as is&quot; and &quot;as available&quot;.
-        </p>
-
-        <h2>Services</h2>
-        <h3>Availability</h3>
+        <h3>AVAILABILITY</h3>
         <p>The Service is provided &quot;as is&quot; and &quot;as available&quot;.</p>
 
-        <h3 className="uppercase">SUPPORT SERVICES</h3>
+        <h3>SUPPORT SERVICES</h3>
         <p>
           The Service includes access to email support. &quot;Email support&quot; means the ability to make requests for technical support assistance by email at any time (with reasonable efforts by Intro to respond within one business day) concerning the use of the Service. All Intro support will be provided in accordance with Intro standard practices, procedures and policies. Intro may need to access your account in order to deliver support and customer services. Additional support and service levels can be agreed upon separately in an SLA (Service Level Agreement) between Intro and the customer.
         </p>
@@ -52,7 +43,7 @@ export default function TermsPage() {
 
         <h3 className="uppercase">THIRD PARTY SERVICES</h3>
         <p>
-          If the Customer uses any third party service with the Service, the Customer acknowledges that the service may access or use the customer&apos;s information. Intro will not be responsible for any act or omission of the third party, including such third party&apos;s use of the Customer&apos;s information. Intro does not warrant or support any such third party service, and the Customer should contact that third party for any issues arising from the Customer&apos;s use of the third party service. A detailed description of third party services&apos; use and data protection can be found in our Data Processing Agreement. Customers can together with Intro agree on a custom DPA, otherwise the standard DPA will automatically apply.
+          If the Customer uses any third party service with the Service, the Customer acknowledges that the service may access or use the customer&apos;s information. Intro will not be responsible for any act or omission of the third party, including such third party&apos;s use of the Customer&apos;s information. Intro does not warrant or support any such third party service, and the Customer should contact that third party for any issues arising from the Customer&apos;s use of the third party service. A detailed description of third party services&apos; use and data protection can be found in our <a href="/dpa" className="text-blue-600 hover:underline">Data Processing Agreement</a>. Customers can together with Intro agree on a custom DPA, otherwise the standard DPA will automatically apply.
         </p>
 
         <h2>Customer Obligations</h2>

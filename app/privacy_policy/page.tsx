@@ -1,6 +1,6 @@
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4 sm:px-6 md:px-8">
       <div className="flex flex-col items-center justify-center py-12 text-center">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
           Privacy Policy
@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
         </p>
       </div>
       
-      <div className="prose prose-lg max-w-[900px] mx-auto pb-20 [&>h2]:mt-16 [&>h2]:mb-8 [&>h3]:mt-8 [&>h3]:mb-4">
+      <div className="prose prose-lg max-w-[900px] mx-auto pb-20 [&>h2]:mt-8 [&>h2]:mb-4 [&>h2]:text-3xl [&>h2]:font-bold [&>h3]:mt-4 [&>h3]:mb-4 [&>p]:my-4 text-left">
         <h2>1. GENERAL</h2>
         
         <h3 className="uppercase">IN PLAIN ENGLISH</h3>

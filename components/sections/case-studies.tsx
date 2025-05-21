@@ -1,7 +1,7 @@
 import { Gallery4, Gallery4Props } from "../ui/gallery4";
 
 const demoData: Gallery4Props = {
-  title: "Case studies",
+  title: "Kundberättelser",
   description:
     "Över 700 företag och 1000+ användare nyttjar Intro till att hitta, kontakta och anställa toppkandidater. Se varför de litar på oss.",
   items: [

@@ -102,7 +102,7 @@ const Gallery4 = ({
 
   return (
     <section className="pt-16 pb-32">
-      <div className="container mx-auto">
+      <div className="w-full px-4 sm:px-6 md:px-8">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">
