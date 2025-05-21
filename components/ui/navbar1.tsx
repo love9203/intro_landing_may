@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Book, Trees, Sunset, Zap, Menu } from "lucide-react";
+import { Book, Trees, Sunset, Zap, Menu, X } from "lucide-react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import Link from 'next/link';
@@ -17,12 +17,13 @@ import {
 } from "@/components/ui/navigation-menu";
 import {
   Sheet,
-  SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
+import { CustomSheetContent } from "@/components/ui/custom-sheet";
 
 export interface MenuItem {
   title: string;
@@ -182,36 +183,26 @@ const Navbar1 = ({
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetHeader>
-                  <SheetTitle>
-                    <Link href={logo.url}>
-                      <Image src={logo.src} width={96} height={40} className="w-24 h-10" alt={logo.alt} />
-                    </Link>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="my-6 flex flex-col gap-6">
+              <CustomSheetContent hideCloseButton={true} className="overflow-y-auto px-6 py-8">
+                <div className="flex items-center justify-between mb-8">
+                  <Link href={logo.url}>
+                    <Image src={logo.src} width={96} height={40} className="w-24 h-10" alt={logo.alt} />
+                  </Link>
+                  <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+                    <X className="h-5 w-5" />
+                    <span className="sr-only">Close</span>
+                  </SheetClose>
+                </div>
+                <div className="flex flex-col gap-8">
                   <Accordion
                     type="single"
                     collapsible
-                    className="flex w-full flex-col gap-4">
+                    className="flex w-full flex-col gap-6">
 
                     {menu.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
-                  <div className="border-t py-4">
-                    <div className="grid grid-cols-2 justify-start">
-                      {mobileExtraLinks.map((link, idx) =>
-                      <Link
-                        key={idx}
-                        className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
-                        href={link.url}>
 
-                          {link.name}
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-4 mt-2 border-t pt-6">
                     <Button asChild variant="outline">
                       <Link href={auth.login.url}>{auth.login.text}</Link>
                     </Button>
@@ -220,7 +211,7 @@ const Navbar1 = ({
                     </Button>
                   </div>
                 </div>
-              </SheetContent>
+              </CustomSheetContent>
             </Sheet>
           </div>
         </div>
@@ -280,14 +271,14 @@ const renderMobileMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
       <AccordionItem key={item.title} value={item.title} className="border-b-0">
-        <AccordionTrigger className="py-0 font-semibold hover:no-underline">
+        <AccordionTrigger className="py-2 px-1 font-semibold hover:no-underline text-base">
           {item.title}
         </AccordionTrigger>
-        <AccordionContent className="mt-2">
+        <AccordionContent className="mt-2 pl-2">
           {item.items.map((subItem) =>
           <Link
             key={subItem.title}
-            className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+            className="flex select-none gap-4 rounded-md p-3 my-1 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
             href={subItem.url}>
 
               {subItem.icon}
@@ -310,7 +301,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
     <Link
       key={item.title}
       href={item.url}
-      className="font-semibold"
+      className="font-semibold py-2 px-1 block text-base"
       onClick={item.onClick}>
 
       {item.title}
