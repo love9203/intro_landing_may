@@ -32,6 +32,9 @@ interface Feature108Props {
   heading?: string;
   description?: string;
   tabs?: Tab[];
+  defaultValue?: string;
+  selectedTab?: string;
+  onTabChange?: (value: string) => void;
 }
 
 const Feature108 = ({
@@ -128,7 +131,10 @@ const Feature108 = ({
       "https://images.unsplash.com/photo-1553484771-11998c592b9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       imageAlt: "Business growth chart"
     }
-  }]
+  }],
+  defaultValue = "tab-1",
+  selectedTab,
+  onTabChange
 
 }: Feature108Props) => {
   return (
@@ -141,24 +147,30 @@ const Feature108 = ({
           </h1>
           <p className="text-muted-foreground">{description}</p>
         </div>
-        <Tabs defaultValue={tabs[0].value} className="mt-8">
+        <Tabs
+          value={selectedTab}
+          onValueChange={onTabChange}
+          defaultValue={!selectedTab ? defaultValue : undefined}
+          className="mt-8">
           <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
-            {tabs.map((tab) =>
-            <TabsTrigger
-              key={tab.value}
-              value={tab.value}
-              className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary">
-
+            {tabs.map((tab) => (
+              <TabsTrigger
+                key={tab.value}
+                value={tab.value}
+                data-tab={tab.label.toLowerCase().replace(/\s+/g, '-')}
+                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
+              >
                 {tab.icon} {tab.label}
               </TabsTrigger>
-            )}
+            ))}
           </TabsList>
           <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16">
-            {tabs.map((tab) =>
-            <TabsContent
-              key={tab.value}
-              value={tab.value}
-              className="grid place-items-center gap-8 md:gap-20 lg:grid-cols-2 lg:gap-10">
+            {tabs.map((tab) => (
+              <TabsContent
+                key={tab.value}
+                value={tab.value}
+                className="grid place-items-center gap-8 md:gap-20 lg:grid-cols-2 lg:gap-10"
+              >
 
                 <div className="flex flex-col gap-5">
                   <Badge variant="outline" className="w-fit bg-background">
@@ -231,7 +243,7 @@ const Feature108 = ({
                 null}
                 </div>
               </TabsContent>
-            )}
+            ))}
           </div>
         </Tabs>
       </div>

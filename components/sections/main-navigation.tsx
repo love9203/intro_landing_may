@@ -19,19 +19,61 @@ const demoData: Navbar1Props = {
           title: "Intro Email",
           description: "3x konvertering jämfört med Linkedin",
           icon: <Zap className="size-5 shrink-0" />,
-          url: "/products/analytics",
+          url: "/#product-features?tab=email",
+          onClick: (e: React.MouseEvent) => {
+            e.preventDefault();
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/') {
+              // When navigating from another page, we need to store a flag in sessionStorage
+              // to indicate that we should scroll to the product-features section after the page loads
+              sessionStorage.setItem('scrollToProductFeatures', 'true');
+              window.location.href = '/#product-features?tab=email';
+            } else {
+              window.location.hash = '#product-features?tab=email';
+              document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+              // No need to manually click the tab anymore as we're using state management
+            }
+          },
         },
         {
           title: "Intro Annonsering",
           description: "Annonsering med laserprecision, slipp inflöde av okvalificerade kandidater",
           icon: <Sunset className="size-5 shrink-0" />,
-          url: "/products/engagement",
+          url: "/#product-features?tab=annonsering",
+          onClick: (e: React.MouseEvent) => {
+            e.preventDefault();
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/') {
+              // When navigating from another page, we need to store a flag in sessionStorage
+              // to indicate that we should scroll to the product-features section after the page loads
+              sessionStorage.setItem('scrollToProductFeatures', 'true');
+              window.location.href = '/#product-features?tab=annonsering';
+            } else {
+              window.location.hash = '#product-features?tab=annonsering';
+              document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+              // No need to manually click the tab anymore as we're using state management
+            }
+          },
         },
         {
           title: "Go-To-Talent",
           description: "Din heltäckande lösning för att rekrytera seniora kandidater",
           icon: <Trees className="size-5 shrink-0" />,
-          url: "/products/security",
+          url: "/#product-features?tab=kartlaggning",
+          onClick: (e: React.MouseEvent) => {
+            e.preventDefault();
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/') {
+              // When navigating from another page, we need to store a flag in sessionStorage
+              // to indicate that we should scroll to the product-features section after the page loads
+              sessionStorage.setItem('scrollToProductFeatures', 'true');
+              window.location.href = '/#product-features?tab=kartlaggning';
+            } else {
+              window.location.hash = '#product-features?tab=kartlaggning';
+              document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+              // No need to manually click the tab anymore as we're using state management
+            }
+          },
         },
       ],
     },

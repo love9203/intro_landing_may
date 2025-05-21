@@ -1,5 +1,8 @@
+"use client";
+
 import { Target, Phone, Star, Mail, Check, Search } from "lucide-react";
 import { Feature108 } from "../ui/feature-108";
+import { useEffect, useState, useCallback } from "react";
 
 const demoData = {
   badge: "Features",
@@ -149,7 +152,76 @@ const demoData = {
 };
 
 function ProductFeatures() {
-  return <Feature108 {...demoData} />;
+  // State to control which tab is selected
+  const [selectedTab, setSelectedTab] = useState("tab-1");
+
+  // Function to handle hash changes and tab selection
+  const handleHashChange = useCallback(() => {
+    if (typeof window !== 'undefined' && window.location.hash.includes('#product-features')) {
+      console.log("Hash changed, checking tab parameter");
+      const urlParams = new URLSearchParams(window.location.hash.split('?')[1] || '');
+      const tabParam = urlParams.get('tab');
+      console.log("Tab parameter:", tabParam);
+      
+      if (tabParam === 'email') {
+        console.log("Setting Email tab (tab-3)");
+        setSelectedTab("tab-3");
+      } else if (tabParam === 'annonsering') {
+        console.log("Setting Riktad annonsering tab (tab-4)");
+        setSelectedTab("tab-4");
+      } else if (tabParam === 'kartlaggning') {
+        console.log("Setting Fullständig kartläggning tab (tab-1)");
+        setSelectedTab("tab-1");
+      }
+      
+      // Scroll to the section
+      setTimeout(() => {
+        console.log("Scrolling to product-features section");
+        document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
+  
+  // Handle direct linking to tabs when the page loads
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.log("Initial check for tab parameter");
+      
+      // Add event listener for hash changes (for when already on the landing page)
+      window.addEventListener('hashchange', handleHashChange);
+      
+      // Initial check for hash parameters
+      handleHashChange();
+      
+      // Check if we need to scroll to this section (coming from another page)
+      const shouldScroll = sessionStorage.getItem('scrollToProductFeatures') === 'true';
+      if (shouldScroll) {
+        // Clear the flag
+        sessionStorage.removeItem('scrollToProductFeatures');
+        
+        // Use a slightly longer timeout to ensure the page is fully loaded
+        setTimeout(() => {
+          console.log("Scrolling to product-features section from session storage flag");
+          document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+      
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener('hashchange', handleHashChange);
+      };
+    }
+  }, [handleHashChange]);
+  
+  return (
+    <div id="product-features">
+      <Feature108 
+        {...demoData} 
+        selectedTab={selectedTab}
+        onTabChange={setSelectedTab}
+      />
+    </div>
+  );
 }
 
 export { ProductFeatures };
