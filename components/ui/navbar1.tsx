@@ -165,31 +165,25 @@ const Navbar1 = ({
     if (!isOpen && pendingHash) {
       console.log("[Nav] Menu closed, scrolling to:", pendingHash);
       
-      // SSR safety check before accessing window
-      if (typeof window !== "undefined") {
-        // Check if we're on the landing page for timing adjustments
-        const isLandingPage = window.location.pathname === '/' || 
-                             window.location.pathname === '/index' || 
-                             window.location.pathname === '';
-        
-        // Small delay to ensure the sheet has fully closed
-        setTimeout(() => {
+      // Wait a small delay to ensure the menu is fully closed
+      setTimeout(() => {
+        const el = document.getElementById(pendingHash);
+        if (el) {
           console.log("[Nav] Running scrollIntoView for:", pendingHash);
-          const el = document.getElementById(pendingHash);
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-            window.history.pushState(null, "", `#${pendingHash}`);
-            console.log("[Nav] Updated history.pushState");
-          } else {
-            console.log("[Nav] Element not found:", pendingHash);
-          }
-          
-          // Clear the pending hash
-          setPendingHash(null);
-        }, isLandingPage ? 500 : 400);
-      }
+          el.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", `#${pendingHash}`);
+          console.log("[Nav] Updated history.pushState");
+        } else {
+          console.log("[Nav] Element not found:", pendingHash);
+        }
+        
+        // Clear the pending hash
+        setPendingHash(null);
+      }, 100); // Small delay to ensure the menu is fully closed
     }
   }, [isOpen, pendingHash]);
+  
+  const SCROLL_DELAY = 400; // ms
   
   return (
     <section className="py-4">
@@ -311,10 +305,12 @@ const renderMenuItem = (item: MenuItem) => {
 
 };
 
-const SCROLL_DELAY = 400; // ms
-
-function isHashLink(url: string) {
-  return url.startsWith('#');
+// Helper function to extract hash from URL
+function extractHash(url: string): string | null {
+  const idx = url.indexOf("#");
+  if (idx === -1) return null;
+  // "product-features?tab=email" → "product-features"
+  return url.slice(idx + 1).split("?")[0];
 }
 
 const renderMobileMenuItem = (item: MenuItem, closeMenu?: () => void, setPendingHash?: (hash: string | null) => void): React.ReactElement => {
@@ -324,40 +320,11 @@ const renderMobileMenuItem = (item: MenuItem, closeMenu?: () => void, setPending
     originalOnClick?: (e: React.MouseEvent) => void
   ) => {
     console.log("[Nav] clicked:", url);
-    const hash = isHashLink(url) ? url.substring(1) : null;
-    const urlHasHash = url.includes('#');
+    const hash = extractHash(url);
     
-    // Special case for case-studies hash link which has a custom handler
-    if (url === '/#case-studies' || url === '#case-studies') {
-      console.log("[Nav] detected case-studies hash link");
-      e.preventDefault();
-      
-      // Store the hash in the parent component's state
-      if (typeof setPendingHash === 'function') {
-        setPendingHash('case-studies');
-      }
-      
-      // Close the menu
-      closeMenu?.();
-      return;
-    }
-
-    // Special case for product-features hash links with custom onClick handlers
-    if (urlHasHash && url.includes('product-features') && originalOnClick) {
-      console.log("[Nav] detected product-features hash link with custom handler");
-      e.preventDefault();
-      
-      // Run the custom onClick handler (which calls navigateToTab)
-      originalOnClick(e);
-      
-      // Close the menu
-      closeMenu?.();
-      return;
-    }
-
     // If it has a custom onClick handler, run it first
-    if (originalOnClick && !urlHasHash) {
-      console.log("[Nav] calling originalOnClick (not a hash link)");
+    if (originalOnClick) {
+      console.log("[Nav] calling originalOnClick");
       e.preventDefault();
       originalOnClick(e);
       
@@ -366,11 +333,11 @@ const renderMobileMenuItem = (item: MenuItem, closeMenu?: () => void, setPending
         setTimeout(() => {
           console.log("[Nav] closing menu after custom onClick");
           closeMenu();
-        }, 500);
+        }, 100);
       }
       return; // Exit early since the custom handler takes precedence
     }
-
+    
     if (hash) {
       console.log("[Nav] hash link, will scroll to:", hash);
       e.preventDefault();
