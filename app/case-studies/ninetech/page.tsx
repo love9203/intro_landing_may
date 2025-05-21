@@ -30,7 +30,7 @@ export default function NinetechCaseStudy() {
           <div>
             <h3 className="font-semibold text-gray-900">Ort</h3>
             <p className="mt-2 text-gray-600">
-              Karlstad.
+              Karlstad
             </p>
           </div>
         </div>
@@ -45,9 +45,9 @@ export default function NinetechCaseStudy() {
             </svg>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900">Roller</h3>
+            <h3 className="font-semibold text-gray-900">Urval av roller</h3>
             <p className="mt-2 text-gray-600">
-              .NET Fullstack, Accountant, Backend Lead, Devops.
+              .NET Fullstack, Sales Executive, Backend Developer, UX Designer, Project Manager
             </p>
           </div>
         </div>
@@ -143,9 +143,6 @@ export default function NinetechCaseStudy() {
             <br />
             <br />
             Genom att använda Intros email-first approach ökade svarsfrekvensen markant. Kandidater som tidigare inte svarat på LinkedIn började nu engagera sig i dialog, vilket ledde till flera lyckade rekryteringar.
-            <br />
-            <br />
-            Intro hjälpte också Ninetech att identifiera personer med koppling till Värmland som arbetade på andra orter, vilket öppnade upp för möjligheten att locka hem talanger till regionen.
           </p>
         </div>
       </div>
@@ -155,10 +152,7 @@ export default function NinetechCaseStudy() {
         <h2 className="text-2xl font-bold text-gray-900">Resultatet</h2>
         <div className="space-y-6 text-gray-600 mt-4">
           <p>
-            Under de första 6 månaderna med Intro såg Ninetech en markant ökning i antalet kvalitativa kandidatdialoger. Svarsfrekvensen ökade från tidigare 15% på LinkedIn till över 45% med Intro.
-            <br />
-            <br />
-            Särskilt framgångsrikt var arbetet med att nå ut till personer med koppling till regionen. Av de kandidater som svarade hade över 60% någon form av tidigare koppling till Värmland, vilket gjorde rekryteringsprocessen betydligt mer effektiv.
+            Under de första 6 månaderna med Intro såg Ninetech en markant ökning i antalet kvalitativa kandidatdialoger.
             <br />
             <br />
             Ninetech har nu etablerat en stark kandidatpipeline och fortsätter att bygga relationer med potentiella framtida medarbetare genom Intro-plattformen.

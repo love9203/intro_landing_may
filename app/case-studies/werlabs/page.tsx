@@ -46,9 +46,9 @@ export default function WerlabsCaseStudy() {
             </svg>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900">Roller</h3>
+            <h3 className="font-semibold text-gray-900">Urval av roller som rekryterats via Intro</h3>
             <p className="mt-2 text-gray-600">
-              Frontend Developer, UX Designer, Tech Lead, Project Manager.
+              Fullstack-utvecklare, UX-designer, Redovisningsansvarig, Medicinsk Koordinator, Data Scientist, Key Account Manager.
             </p>
           </div>
         </div>

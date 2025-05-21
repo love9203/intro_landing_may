@@ -17,13 +17,13 @@ const demoData: Gallery4Props = {
       id: "tailwind",
       title: "byBrick",
       description:
-        "Discover how Tailwind CSS transformed the way developers style their applications, offering a utility-first approach that speeds up development while maintaining complete design flexibility.",
+        "Hur byBrick fick bättre träffsäkerhet på kandidater och högre svarsfrekvens jämfört med LinkedIn med hjälp av Intros rekryteringsplattform.",
       href: "/case-studies/bybrick",
       image: "/images/case_studies/bybrick.svg",
     },
     {
       id: "astro",
-      title: "Handelshögskolan i Stockholm",
+      title: "Handelshögskolan (HHS)",
       description:
         "Se hur Handelshögskolan i Stockholm (HHS) effektiviserade sin tech-rekrytering med hjälp av Intro.",
       href: "/case-studies/sse",
@@ -41,7 +41,7 @@ const demoData: Gallery4Props = {
       id: "nextjs",
       title: "Ninetech",
       description:
-        "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
+        "Hur Ninetech fick fler svar av kandidater och utökade sitt kandidatnätverk med Intro.",
       href: "/case-studies/ninetech",
       image: "/images/case_studies/ninetech_new.svg",
     },

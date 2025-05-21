@@ -1,10 +1,11 @@
-import { Users, Megaphone, Building2 } from "lucide-react"
+import { Users, Building2, Map, BookOpen, BarChart2, Search, Database, LineChart } from "lucide-react"
 import { UseCaseFeature } from "@/components/ui/use-case-feature"
 
 const demoData = {
   badge: "Use Cases",
   heading: "Välj den lösning som passar dig bäst",
   description: "Vi erbjuder olika lösningar för olika behov",
+  exploreMoreLink: "/use-cases",
   tabs: [
     {
       value: "rekrytering",
@@ -14,9 +15,8 @@ const demoData = {
         tiers: [
           {
             id: "sourcing",
-            name: "Enskild rekrytering",
-
-            description: "När du enbart behöver anställa för en specifik roll",
+            name: "Trip to Japan in april",
+            description: "Manus integrates comprehensive travel information to create personalized itineraries and produces a custom travel handbook tailored specifically for your Japanese adventure.",
             features: [
               "Sök i 36+ källor",
               "Smart matchning",
@@ -25,25 +25,26 @@ const demoData = {
               "Specialist support",
             ],
             cta: "Börja nu",
+            icon: <Map className="h-5 w-5 text-gray-600" />,
+            image: "/images/japan_trip.jpg"
           },
           {
             id: "sourcing-plus",
-            name: "Ersättningsrekrytering",
-
-            description: "När du behöver någon på plats snabbt",
+            name: "Interactive course on the momentum theorem",
+            description: "Manus develops engaging video presentations for middle school educators, clearly explaining the momentum theorem through accessible and educational content.",
             features: [
               "Uppstart inom 24 timmar",
               "Intresserade kandidater inom några dagar",
               "Anställning inom några veckor",
             ],
             cta: "Uppgradera",
+            icon: <BookOpen className="h-5 w-5 text-gray-600" />,
+            image: "/images/momentum_course.jpg"
           },
-
           {
             id: "talent-pool-plus",
-            name: "Långsiktig bearbetning",
-
-            description: "När du behöver en långsiktig bearbetning av kandidater med en viss kompetens",
+            name: "Comparative analysis of insurance policies",
+            description: "Looking to compare insurance options? Manus generates clear, structured comparison tables highlighting key policy information with optimal recommendations.",
             features: [
               "Allt i Talent Pool",
               "Team samarbete",
@@ -52,12 +53,13 @@ const demoData = {
               "Priority support",
             ],
             cta: "Uppgradera",
+            icon: <BarChart2 className="h-5 w-5 text-gray-600" />,
+            image: "/images/insurance_analysis.jpg"
           },
           {
             id: "enterprise",
-            name: "Nisch-rekrytering",
-            price: { monthly: "Custom" },
-            description: "När du har behov av en mer Headhunting-liknande rekrytering",
+            name: "B2B supplier sourcing",
+            description: "Manus conducts comprehensive research across extensive networks to identify the most suitable suppliers for your specific requirements. As your dedicated agent, Manus works exclusively in your best interest.",
             features: [
               "Allt i Talent Pool+",
               "Dedikerad specialist",
@@ -66,21 +68,22 @@ const demoData = {
               "SLA support",
             ],
             cta: "Kontakta oss",
+            icon: <Database className="h-5 w-5 text-gray-600" />,
+            image: "/images/supplier_sourcing.jpg"
           },
         ],
       }
     },
     {
-      value: "employer-branding",
+      value: "employer-branding-annonsering",
       icon: <Building2 className="h-auto w-4 shrink-0" />,
-      label: "Employer Branding",
+      label: "Employer Branding / Annonsering",
       content: {
         tiers: [
           {
             id: "social",
-            name: "Social Media",
-
-            description: "För sociala medier",
+            name: "Research on AI products for the clothing industry",
+            description: "Manus conducts comprehensive research on AI search products in the clothing industry, with comprehensive product analysis and competitive positioning.",
             features: [
               "Innehållsstrategi",
               "Automatisk publicering",
@@ -89,64 +92,13 @@ const demoData = {
               "ROI mätning",
             ],
             cta: "Börja posta",
-          },
-          {
-            id: "content",
-            name: "Content",
-
-            description: "För content marketing",
-            features: [
-              "Innehållsproduktion",
-              "SEO optimering",
-              "Målgruppsanalys",
-              "Performance tracking",
-              "Lead generation",
-            ],
-            cta: "Skapa content",
-          },
-          {
-            id: "enterprise-brand",
-            name: "Enterprise",
-            price: { monthly: "Custom" },
-            description: "För större varumärken",
-            features: [
-              "Allt i Content",
-              "Brand strategy",
-              "Custom analytics",
-              "Dedikerat team",
-              "24/7 support",
-            ],
-            cta: "Kontakta oss",
-            highlighted: true,
-          },
-        ],
-      }
-    },
-    {
-      value: "annonsering",
-      icon: <Megaphone className="h-auto w-4 shrink-0" />,
-      label: "Annonsering",
-      content: {
-        tiers: [
-          {
-            id: "job-ads",
-            name: "Job Ads",
-
-            description: "För platsannonser",
-            features: [
-              "Multi-channel posting",
-              "Smart targeting",
-              "Performance tracking",
-              "A/B testing",
-              "Budget optimization",
-            ],
-            cta: "Börja annonsera",
+            icon: <Search className="h-5 w-5 text-gray-600" />,
+            image: "/images/ai_research.jpg"
           },
           {
             id: "campaigns",
-            name: "Campaigns",
-
-            description: "För större kampanjer",
+            name: "List of YC companies",
+            description: "Manus expertly navigated the YC W25 database to identify all qualifying B2B companies, meticulously compiling this valuable information into a structured table.",
             features: [
               "Campaign strategy",
               "Creative production",
@@ -155,21 +107,38 @@ const demoData = {
               "ROI optimization",
             ],
             cta: "Starta kampanj",
+            icon: <Database className="h-5 w-5 text-gray-600" />,
+            image: "/images/yc_companies.jpg"
           },
           {
-            id: "enterprise-ads",
-            name: "Enterprise",
-            price: { monthly: "Custom" },
-            description: "För globala företag",
+            id: "job-ads",
+            name: "Online store operation analysis",
+            description: "Upload your Amazon store sales data and Manus delivers actionable insights, detailed visualizations, and customized strategies designed to increase your sales performance.",
+            features: [
+              "Multi-channel posting",
+              "Smart targeting",
+              "Performance tracking",
+              "A/B testing",
+              "Budget optimization",
+            ],
+            cta: "Börja annonsera",
+            icon: <LineChart className="h-5 w-5 text-gray-600" />,
+            image: "/images/store_analysis.jpg"
+          },
+          {
+            id: "enterprise-brand",
+            name: "Campaign explanation maps",
+            description: "Custom-designed visualization maps that bring historical events like the Battle of Lexington to life, enhancing student understanding through intuitive visual storytelling.",
             features: [
               "Allt i Campaigns",
-              "Global reach",
+              "Brand strategy",
               "Custom integration",
               "Dedicated support",
               "Custom reporting",
             ],
             cta: "Kontakta oss",
-            highlighted: true,
+            icon: <Map className="h-5 w-5 text-gray-600" />,
+            image: "/images/campaign_maps.jpg"
           },
         ],
       }

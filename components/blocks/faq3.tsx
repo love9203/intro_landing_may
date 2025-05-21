@@ -52,7 +52,7 @@ const demoData = {
   supportDescription:
     "Hittar du inte det du söker? Vårt team finns här för att hjälpa dig med alla frågor om våra tjänster.",
   supportButtonText: "Kontakta oss",
-  supportButtonUrl: "#contact",
+  supportButtonUrl: "/book-demo",
 };
 
 function Faq3Demo() {

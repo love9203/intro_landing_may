@@ -1,76 +1,177 @@
+import Image from "next/image";
 import { Metadata } from "next";
-import { CaseStudyHeader } from "@/components/case-study/case-study-header";
-import { CaseStudyContent } from "@/components/case-study/case-study-content";
-import { CaseStudyQuote } from "@/components/case-study/case-study-quote";
-import { CaseStudyResults } from "@/components/case-study/case-study-results";
 
 export const metadata: Metadata = {
-  title: "byBrick Case Study | How Intro Improved Their Tech Recruitment",
-  description: "Discover how byBrick achieved better candidate matching and response rates compared to LinkedIn using Intro's recruitment platform"
+  title: "byBrick Case Study | Hur Intro förbättrade deras tekniska rekrytering",
+  description: "Upptäck hur byBrick fick bättre träffsäkerhet på kandidater och högre svarsfrekvens jämfört med LinkedIn med hjälp av Intros rekryteringsplattform"
 };
 
 export default function ByBrickCaseStudy() {
   return (
-    <article className="container mx-auto px-4 py-12">
-      <CaseStudyHeader
-        company="byBrick"
-        title="How byBrick Improved Their Tech Recruitment Success Rate with Intro"
-        description="A rapidly growing group of technical specialist companies finds better candidates and higher response rates through Intro's platform"
-        logo="/logos/bybrick.svg" />
-
-
-      <CaseStudyContent>
-        <h2>About byBrick</h2>
-        <p>
-          byBrick is a dynamic consortium of five specialized technical companies, each bringing unique expertise to help clients optimize their development and business operations. Their diverse portfolio demands a precise and efficient recruitment process to maintain their high standards of technical excellence.
+    <div className="space-y-8">
+      {/* Hero section */}
+      <div className="space-y-4">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          Hur byBrick fick bättre hitrate på rätt typer av kandidater, fler svar än på LinkedIn och bättre första intervjuer med kandidater med hjälp av Intro.
+        </h1>
+        <p className="text-md text-gray-600">
+          Lästid: 3 minuter
         </p>
+      </div>
 
-        <h2>The Challenge</h2>
-        <p>
-          As a Group Recruitment Manager, Tobias Carlsson faced two primary challenges in his recruitment efforts:
-        </p>
-        <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>Finding candidates who precisely matched their specific technical requirements</li>
-          <li>Achieving better response rates from qualified candidates</li>
-        </ul>
+      {/* Key points section */}
+      <div className="grid gap-6 mt-12">
+        <div className="flex gap-4">
+          <div className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
+            <svg className="w-4 h-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-900">Ort</h3>
+            <p className="mt-2 text-gray-600">
+              Stockholm
+            </p>
+          </div>
+        </div>
 
-        <CaseStudyQuote
-          quote="I've used LinkedIn Recruiter for years, and LinkedIn has always struggled with precise matching. When searching for a specific role, you quickly end up with mismatches in their search tool."
-          author="Tobias Carlsson"
-          role="Group Recruitment Manager" />
+        <div className="flex gap-4">
+          <div className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
+            <svg className="w-4 h-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-900">Urval av roller</h3>
+            <p className="mt-2 text-gray-600">
+              Systemutvecklare inom olika områden: Java, .NET, Frontend
+            </p>
+          </div>
+        </div>
 
+        <div className="flex gap-4">
+          <div className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
+            <svg className="w-4 h-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-900">Mål med Intro:</h3>
+            <p className="mt-2 text-gray-600">
+              - Hitta rätt typer av utvecklare med högre träffsäkerhet 
+              <br />
+              - Få fler svar från kandidater än via LinkedIn
+              <br />
+              - Effektivisera rekryteringsprocessen
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <h2>The Solution</h2>
-        <p>
-          byBrick implemented Intro alongside their existing LinkedIn Recruiter to compare results. This parallel testing approach allowed them to:
-        </p>
-        <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>Evaluate the quality of candidate matches</li>
-          <li>Compare response rates between platforms</li>
-          <li>Assess the overall quality of candidate interactions</li>
-        </ul>
+      {/* Testimonial section */}
+      <blockquote className="mt-12 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
+        &quot;Intro ger mig mycket bättre hitrate på rätt kandidater samt att jag får fler svar än vad jag får på LinkedIn. Det har dessutom varit mycket bättre första intervjuer med kandidater som har kommit fram via Intro&quot;
+        <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
+          <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+            <img
+              src="/images/avatars/tobias-bybrick.jpeg"
+              alt="Tobias Carlsson"
+              className="w-full h-full object-cover" />
+          </div>
+          - Tobias Carlsson, Group Recruitment Manager, byBrick
+        </footer>
+      </blockquote>
 
-        <CaseStudyResults
-          results={[
-          "Higher accuracy in finding candidates matching specific criteria",
-          "Increased response rates compared to LinkedIn",
-          "Higher quality first interviews with candidates",
-          "Improved candidate engagement through smart email sequences",
-          "Better project tracking with comprehensive statistics"]
-          } />
+      {/* About section */}
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-gray-900">Om byBrick</h2>
+        <div className="space-y-6 text-gray-600 mt-4">
+          <p>
+            ByBrick består av fem olika specialistföretag med olika tekniska kompetenser för att kunna hjälpa sina kunder att super-effektivisera sin utveckling och affär.
+          </p>
+          <p>
+            Vi har pratat med Tobias Carlsson, Group Recruitment Manager, om hur han upplever samarbetet med Intro.
+          </p>
+        </div>
+      </div>
 
+      {/* Challenge section */}
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-gray-900">Utmaningen</h2>
+        <div className="space-y-6 text-gray-600 mt-4">
+          <p>
+            "Jag har använt LinkedIn Recruiter i alla år och LinkedIn har alltid haft problemet att träffa helt rätt. Söker du efter en specifik roll hamnar du ganska snabbt i ett läge där det blir felmatchningar i deras sökverktyg.
+          </p>
+          <p>
+            Sedan ville jag också kontakta kandidaterna på ett annat sätt än via meddelanden på LinkedIn för att se om jag får fler svar."
+          </p>
+        </div>
+      </div>
 
-        <h2>Expert Support</h2>
-        <p>
-          Beyond the platform&apos;s technical capabilities, byBrick found significant value in Intro&apos;s personalized support system. Unlike traditional platforms offering only web courses, Intro provides direct access to search experts who help optimize search strategies and message content.
-        </p>
+      {/* Solution section */}
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-gray-900">Lösningen</h2>
+        <div className="space-y-6 text-gray-600 mt-4">
+          <p>
+            ByBrick fick möjligheten att testa Intro parallellt med LinkedIn för att jämföra om resultatet är bättre.
+          </p>
+          <blockquote className="mt-6 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
+            &quot;Att säga upp LinkedIn är inte något jag trodde jag skulle göra någonsin, då när all min konversationshistorik försvinner och likaså all data jag har sparat med kandidater. Därför var det bra att vi kunde implementera och testa Intro medan vi fortfarande hade LinkedIn för att se om våra sök träffade bättre kandidater och vi fick svar från fler än man får på LinkedIn.&quot;
+            <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+                <img
+                  src="/images/avatars/tobias-bybrick.jpeg"
+                  alt="Tobias Carlsson"
+                  className="w-full h-full object-cover" />
+              </div>
+              - Tobias Carlsson, Group Recruitment Manager, byBrick
+            </footer>
+          </blockquote>
+        </div>
+      </div>
 
-        <CaseStudyQuote
-          quote="Intro is better than LinkedIn and has the potential to develop the product further. But I also recommend the Intro team - you won't find better support and search expertise anywhere else."
-          author="Tobias Carlsson"
-          role="Group Recruitment Manager" />
+      {/* Results section */}
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-gray-900">Resultatet</h2>
+        <div className="space-y-6 text-gray-600 mt-4">
+          <p>
+            Genom att implementera Intro kunde byBrick se betydande resultat:
+            <br />
+            <br />
+            • Intro gav bättre träffsäkerhet och hittade fler kandidater som matchar deras kriterier än LinkedIn
+            <br />
+            • Fler kandidater svarade via email än vad de gör på LinkedIn
+            <br />
+            • Första intervjuer var av högre kvalité med kandidater från Intro
+            <br />
+            <br />
+            Tobias berättar att plattformen har andra bra funktioner som smarta emailsekvenser, sammanfattande statistik på hur bra projekten går samt att Intro taggar upp svaren automatiskt och hjälper honom att prioritera.
+          </p>
+        </div>
+      </div>
 
-      </CaseStudyContent>
-    </article>);
+      {/* Recommendation section */}
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-gray-900">Skulle du rekommendera Intro?</h2>
+        <blockquote className="mt-6 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
+          &quot;Ja det gör jag, testa! Intro är bättre än vad LinkedIn är och de har potential att utveckla produkten vidare till att bli ännu bättre. Men jag rekommenderar också Intro teamet, du får inte bättre support och expertis om search någon annanstans. På LinkedIn så kan du ta del av någon webbkurs, medan på Intro får du sitta med en expert och bolla dina sökningar och meddelanden.&quot;
+          <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
+            <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+              <img
+                src="/images/avatars/tobias-bybrick.jpeg"
+                alt="Tobias Carlsson"
+                className="w-full h-full object-cover" />
+            </div>
+            - Tobias Carlsson, Group Recruitment Manager, byBrick
+          </footer>
+        </blockquote>
+      </div>
+    </div>);
 
 }

@@ -13,7 +13,7 @@ export default function SSECaseStudy() {
       {/* Hero section */}
       <div className="space-y-4">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-        Handelshögskolan i Stockholm × Intro – Så förvandlades rekryterings­utmaningar till strategiska framgångar
+        Hur Handelshögskolan stärker sitt employer brand och får kontakt med fler talanger med hjälp av Intro.
         </h1>
         <p className="text-md text-gray-600">
           Lästid: 4 minuter
@@ -47,51 +47,16 @@ export default function SSECaseStudy() {
             </svg>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900">Roller</h3>
+            <h3 className="font-semibold text-gray-900">Urval av roller</h3>
             <p className="mt-2 text-gray-600">
-              Senior Backend Developer, Cloud Engineer, System Architect
+              Network Specialist, Security Coordinator, IT Service Owner 
             </p>
           </div>
         </div>
 
-        <div className="flex gap-4">
-          <div className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
-            <svg className="w-4 h-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <circle cx="12" cy="12" r="6" />
-              <circle cx="12" cy="12" r="2" />
-            </svg>
-          </div>
-          <div>
-            <h3 className="font-semibold text-gray-900">Mål med Intro:</h3>
-            <p className="mt-2 text-gray-600">
-              - Hitta seniora utvecklare i Växjö med omnejd
-              <br />
-              - Attrahera tech-talanger från storstäderna
-              <br />
-              - Bygga ett starkare employer brand i tech-communityn
-            </p>
-          </div>
-        </div>
+
 
       </div>
-
-      {/* Testimonial section */}
-      <blockquote className="mt-12 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
-        &quot;Intro har hjälpt oss att hitta och attrahera senior tech-kompetens till Växjö på ett sätt som vi inte lyckats med tidigare. Det personliga angreppssättet gör verkligen skillnad.&quot;
-        <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
-          <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
-            <Image
-              src="/images/avatars/linda_sse.jpg"
-              alt="Johan Svensson"
-              width={24}
-              height={24}
-              className="w-full h-full object-cover" />
-
-          </div>
-          - Linda Ackered, HR Business Partner, Handelshögskolan i Stockholm
-        </footer>
-      </blockquote>
 
       {/* Company intro section */}
       <div className="mt-12">
@@ -112,7 +77,7 @@ export default function SSECaseStudy() {
         <h2 className="text-2xl font-bold text-gray-900">Utmaningen</h2>
         <div className="space-y-6 text-gray-600 mt-4">
           <ol className="list-decimal list-inside space-y-2">
-            <li>Specialiserade krav – Roller som DevOps-ingenjörer och data scientists krävde djup domänkunskap för att hitta rätt profiler.</li>
+            <li>Specialiserade krav – en av de största utmaningarna var att hitta rätt kandidater till deras olika tjänster. Med många specialiserade områden inom verksamheten var det svårt att vara expert på alla områden vilket ofta krävs för att hitta rätt kandidater.</li>
             <li>Begränsad budget – Utrymmet för dyra headhunting-lösningar var minimalt.</li>
             <li>Tidsbrist – HR-teamet behövde ett sätt att kombinera personlig kandidatkontakt med effektivitet.</li>
           </ol>
@@ -121,69 +86,89 @@ export default function SSECaseStudy() {
 
       {/* Solution section */}
       <div className="mt-16">
-        <h2 className="text-2xl font-bold text-gray-900">Lösningen</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Varför SSE valde Intro</h2>
         <div className="space-y-6 text-gray-600 mt-4">
           <p>
-            Med Intro kunde Fortnox implementera en mer proaktiv och personlig rekryteringsstrategi. Plattformen hjälpte till att identifiera utvecklare med koppling till Småland eller som visade intresse för en livsstilsförändring bort från storstaden.
-            <br />
-            <br />
-            Genom att fokusera på personlig kommunikation via email kunde Fortnox bättre förmedla sina unika fördelar som arbetsgivare och fördelarna med att bo och arbeta i Växjö.
+            Trots budgetbegränsningar kvarstod behovet att nå ut till eftertraktade kandidater med specialiserad kompetens, framför allt inom IT. Det var då Intro introducerades som ett komplement till deras befintliga rekryteringsstrategi.
           </p>
+          
+          <blockquote className="mt-6 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
+            &quot;Intro hjälpte oss att spara tid och samtidigt behålla en personlig kontakt med kandidaterna – något som är viktigt för oss.&quot;
+            <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+                <img
+                  src="/images/avatars/linda_sse.jpg"
+                  alt="Linda Ackered"
+                  className="w-full h-full object-cover" />
+              </div>
+              – Linda Ackered, HR Business Partner
+            </footer>
+          </blockquote>
+          
+          <p>
+            Intros lösning kombinerar automatisering med ett personligt tilltal via e-post, vilket inte bara gör processen mer effektiv – utan också förbättrar svarsfrekvensen från kvalificerade kandidater. Dessutom ger plattformen en samlad överblick, vilket förenklar rekryteringsarbetet ytterligare.
+          </p>
+        </div>
+      </div>
+
+      {/* Implementation section */}
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-gray-900">Snabb implementering och trygg support</h2>
+        <div className="space-y-6 text-gray-600 mt-4">
+          <p>
+            Införandet av Intro gick snabbt och smidigt, med endast minimala insatser från IT-avdelningen. Linda framhåller särskilt den personliga supporten från sin kontaktperson Viktor som en avgörande faktor för en lyckad start.
+          </p>
+          
+          <blockquote className="mt-6 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
+            &quot;Superbra kontaktperson – Viktor har varit fantastisk. Han följde upp hela tiden, gav feedback på våra mejl och såg till att vi kom igång ordentligt. Han har verkligen varit en klippa.&quot;
+            <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+                <img
+                  src="/images/avatars/linda_sse.jpg"
+                  alt="Linda Ackered"
+                  className="w-full h-full object-cover" />
+              </div>
+              – Linda Ackered, HR Business Partner
+            </footer>
+          </blockquote>
         </div>
       </div>
 
       {/* Results section */}
       <div className="mt-16">
-        <h2 className="text-2xl font-bold text-gray-900">Resultatet</h2>
-        <div className="space-y-6 mt-4">
-          <CaseStudyResults
-            results={[
-            "Högre träffsäkerhet i att hitta kandidater som matchar specifika kriterier",
-            "Ökade svarsfrekvenser jämfört med LinkedIn",
-            "Bättre kvalitet på första intervjuer med kandidater",
-            "Förbättrat kandidatengagemang genom smarta e-postsekvenser",
-            "Bättre projektuppföljning med omfattande statistik"]
-            } />
-
-          <div className="text-gray-600">
-            <p>
-              Under det första året med Intro såg Fortnox flera positiva resultat:
-              <br />
-              <br />
-              • 8 seniora utvecklare rekryterades via plattformen
-              <br />
-              • 40% av de rekryterade kom från storstadsregioner
-              <br />
-              • Tiden för att fylla seniora positioner minskade med 45%
-              <br />
-              • Employer brand-värdet ökade markant i tech-communityn
-              <br />
-              <br />
-              Särskilt framgångsrikt var arbetet med att nå ut till personer som hade någon form av koppling till regionen och som var öppna för en förändring i livsstil.
-            </p>
-          </div>
+        <h2 className="text-2xl font-bold text-gray-900">Resultat: Flera kontakter och stärkt employer brand</h2>
+        <div className="space-y-6 text-gray-600 mt-4">
+          <p>
+            Samarbetet med Intro har redan gett resultat. Handelshögskolan har lyckats anställa flertalet kandidater inom helt olika områden. Dessutom har de breddat sitt nätverk och samtidigt stärkt sitt employer brand – varje kontakt har bidragit med värde.
+          </p>
+          
+          <blockquote className="mt-6 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
+            &quot;Med Intro har vi nått kandidater vi annars inte skulle ha fått kontakt med.&quot;
+            <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+                <img
+                  src="/images/avatars/linda_sse.jpg"
+                  alt="Linda Ackered"
+                  className="w-full h-full object-cover" />
+              </div>
+              – Linda Ackered, HR Business Partner
+            </footer>
+          </blockquote>
         </div>
       </div>
 
-      {/* Recommendation section */}
+      {/* Summary section */}
       <div className="mt-16">
-        <h2 className="text-2xl font-bold text-gray-900">Skulle du rekommendera Intro?</h2>
-        <blockquote className="mt-6 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
-          &quot;Definitivt! Intro har varit en game-changer för vår tech-rekrytering. Det personliga angreppssättet och möjligheten att nå rätt kandidater har gjort stor skillnad för vår förmåga att attrahera senior kompetens till Växjö.&quot;
-          <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
-            <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
-              <Image
-                src="/images/avatars/johan_fortnox.jpeg"
-                alt="Johan Svensson"
-                width={24}
-                height={24}
-                className="w-full h-full object-cover" />
-
-            </div>
-            - Johan Svensson, Tech Recruitment Manager, Fortnox
-          </footer>
-        </blockquote>
+        <h2 className="text-2xl font-bold text-gray-900">Sammanfattning</h2>
+        <div className="space-y-4 text-gray-600 mt-4">
+          <ul className="list-disc list-inside space-y-2">
+            <li><strong>Utmaning:</strong> Begränsad budget och behov av nischad kompetens</li>
+            <li><strong>Lösning:</strong> Introduktion av Intro för att effektivisera outreach och spara tid</li>
+            <li><strong>Resultat:</strong> Flera lyckade rekryteringar, breddat nätverk, stärkt arbetsgivarvarumärke</li>
+          </ul>
+        </div>
       </div>
+
     </div>);
 
 }

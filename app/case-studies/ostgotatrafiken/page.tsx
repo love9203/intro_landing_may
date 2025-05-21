@@ -11,7 +11,7 @@ export default function ScaniaCaseStudy() {
       {/* Hero section */}
       <div className="space-y-4">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-        Hur Scania använder Intro för att hitta specialistkompetens inom embedded systems och AI.
+        Hur Östgatatrafiken fick ett mer kvalitativt inflöde av kandidater till positioner som tidigare varit svåra att tillsätta.
         </h1>
         <p className="text-md text-gray-600">
         Lästid: 4 minuter
@@ -30,7 +30,7 @@ export default function ScaniaCaseStudy() {
           <div>
             <h3 className="font-semibold text-gray-900">Ort</h3>
             <p className="mt-2 text-gray-600">
-              Södertälje.
+              Linköping
             </p>
           </div>
         </div>
@@ -45,9 +45,9 @@ export default function ScaniaCaseStudy() {
             </svg>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900">Roller</h3>
+            <h3 className="font-semibold text-gray-900">Urval av roller</h3>
             <p className="mt-2 text-gray-600">
-              Embedded Systems Engineer, AI Developer, Machine Learning Engineer.
+              Systemadministratörer, IT-Specialister
             </p>
           </div>
         </div>
@@ -63,11 +63,11 @@ export default function ScaniaCaseStudy() {
           <div>
             <h3 className="font-semibold text-gray-900">Mål med Intro:</h3>
             <p className="mt-2 text-gray-600">
-            - Hitta specialister inom embedded systems och AI
+            - Hitta specialister inom IT och Systemadministration
             <br />
-            - Attrahera tech-talanger till fordonsindustrin
+            - Minska beroende av externa rekryteringsbolag
             <br />
-            - Bygga en pipeline av framtida tech-talanger
+            - Bygga en pipeline av framtida tech-talanger i Östergötland
             </p>
           </div>
         </div>
@@ -75,29 +75,32 @@ export default function ScaniaCaseStudy() {
 
       {/* Testimonial section */}
       <blockquote className="mt-12 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
-        &quot;Intro har hjälpt oss att nå ut till och engagera tech-specialister som vi tidigare hade svårt att hitta. Det personliga tillvägagångssättet har varit nyckeln till vår framgång.&quot;
+        &quot;Att ha Intro som partner ger en avslappnande känsla - för att jag vet att vi kommer i mål med rekryteringen.&quot;
         <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
           <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
             <img
-              src="/images/avatars/anders_scania.jpeg"
+              src="/images/avatars/zeraldin_ostgotatrafiken.jpeg"
               alt="Anders Nilsson"
               className="w-full h-full object-cover" />
 
           </div>
-          - Anders Nilsson, Technical Recruitment Lead, Scania
+          - Zeraldin Hajdarevic, Technical & IT-Infrastructure Manager, Östgatatrafiken
         </footer>
       </blockquote>
 
       {/* Results section */}
       <div className="mt-12">
-        <h2 className="text-2xl font-bold text-gray-900">Scania – Innovation inom transport</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Östgötatrafiken ansvarar för kollektivtrafiken i Östergötland.</h2>
         <div className="space-y-6 text-gray-600">
           <br />
           <p>
-            Scania är en världsledande leverantör av transportlösningar, med ett starkt fokus på innovation och hållbar utveckling. I takt med den tekniska utvecklingen inom fordonsindustrin ökar behovet av specialistkompetens inom områden som embedded systems och AI.
+          Östgötatrafiken planerar linjer och tidtabeller med buss, tåg och spårvagn med målet att ge sina kunder en enkel, trygg och bekväm resa och ett bra och pålitligt alternativ till bilen.
           </p>
           <p>
-            Vi har pratat med Anders Nilsson, Technical Recruitment Lead på Scania, om hur de använder Intro för att hitta och attrahera tech-specialister till sin verksamhet i Södertälje.
+          De arbetar bland annat för att öka kollektivtrafikens marknadsandel och ha nöjda kunder. Utformningen av deras resor och tjänster ska också bidra till ett klimatpositivt samhälle.
+          </p>
+          <p>
+          Vi har pratat med Zeraldin Hajdarevic, Technical & IT-infrastructure Manager på Östgötatrafiken. 
           </p>
         </div>
       </div>
@@ -107,24 +110,23 @@ export default function ScaniaCaseStudy() {
         <h2 className="text-2xl font-bold text-gray-900">Utmaningen</h2>
         <div className="space-y-6 text-gray-600 mt-4">
           <p>
-            Som traditionellt industriföretag stod Scania inför utmaningen att attrahera tech-talanger i konkurrens med renodlade tech-företag. Särskilt utmanande var rekryteringen av specialister inom embedded systems och AI, där konkurrensen om talangerna är extremt hård.
-            <br />
-            <br />
-            Traditionella rekryteringsmetoder gav begränsad framgång, och det var svårt att nå ut till passiva kandidater med rätt kompetens. Dessutom behövde Scania stärka sitt employer brand inom tech-communityn.
+          Zeraldin upplever att det har varit svårt att rekrytera IT-kompetens de senaste 7-8 åren. Han berättar att de tidigare har jobbat mer efter ett traditionellt recept genom rekryteringsbolag och annonser.
           </p>
-        </div>
-      </div>
-
-      {/* Solution section */}
-      <div className="mt-16">
-        <h2 className="text-2xl font-bold text-gray-900">Lösningen</h2>
-        <div className="space-y-6 text-gray-600 mt-4">
           <p>
-            Genom att implementera Intro kunde Scania ta ett mer proaktivt och personligt grepp om sin tech-rekrytering. Plattformen hjälpte till att identifiera och nå ut till specialister med relevant erfarenhet, särskilt inom embedded systems och AI.
-            <br />
-            <br />
-            En viktig del av strategin var att lyfta fram Scanias spännande tech-utmaningar och möjligheter att arbeta med cutting-edge teknologi i en global kontext.
+          Han beskriver hur det har varit ett jätteproblem att de partners som anlitats har misslyckats. Så när de hörde talas om Intros metod att sätta kunden i kontakt med kandidater direkt och inte via en mellanhand blev han genast nyfiken.
           </p>
+          <blockquote className="mt-6 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
+            &quot;Efter ha testat flera olika traditionella rekryteringsföretag och annonsering utan resultat så hoppade vi på Intro. Vi var skeptiska i början, de vore inte det första företaget inom rekryteringsbranschen som lovar mycket.&quot;
+            <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
+                <img
+                  src="/images/avatars/zeraldin_ostgotatrafiken.jpeg"
+                  alt="Zeraldin Hajdarevic"
+                  className="w-full h-full object-cover" />
+              </div>
+              - Zeraldin Hajdarevic, Technical & IT-Infrastructure Manager, Östgötatrafiken
+            </footer>
+          </blockquote>
         </div>
       </div>
 
@@ -133,19 +135,19 @@ export default function ScaniaCaseStudy() {
         <h2 className="text-2xl font-bold text-gray-900">Resultatet</h2>
         <div className="space-y-6 text-gray-600 mt-4">
           <p>
-            Efter att ha använt Intro i 9 månader kunde Scania se betydande resultat:
+            Genom att implementera Intro kunde Östgötatrafiken se betydande resultat:
             <br />
             <br />
-            • 12 specialister inom embedded systems och AI rekryterade
+            • Lyckade tillsättningar på alla planerade roller 
             <br />
-            • 55% högre svarsfrekvens jämfört med tidigare metoder
+            • Helt annat inflöde av kvalitativa kandidater jämfört med tidigare metoder
             <br />
-            • 70% av rekryterade kandidater kom från första kontakt via Intro
+            • Kontakt med kandidater som normalt inte nåddes via andra kanaler
             <br />
-            • Förbättrad perception av Scania som tech-arbetsgivare
+            • Möjlighet att konkurrensutsätta kandidaterna i processen, vilket har varit en lyxsituation
             <br />
             <br />
-            Särskilt framgångsrikt var arbetet med att kommunicera Scanias tekniska utmaningar och innovationsfokus, vilket hjälpte till att attrahera tech-talanger som tidigare inte övervägt fordonsindustrin.
+            Zeraldin berättar att en särskilt framgångsrik del i arbetet med Intro har varit volymen av kvalitativa kandidater han fått möjlighet att prata med. Han beskriver hur Intro ger han väldigt mycket att göra, vilket är precis det han vill uppnå i en rekryteringsprocess. Han har alltför många gånger upplevt det motsatta - att inte ha tillräckligt med bra kandidater i process. Nu kan han välja och vraka bland kvalitativa kandidater.
           </p>
         </div>
       </div>
@@ -154,16 +156,16 @@ export default function ScaniaCaseStudy() {
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-gray-900">Skulle du rekommendera Intro?</h2>
         <blockquote className="mt-6 border-l-4 border-indigo-600 pl-6 italic text-gray-700">
-          &quot;Absolut! Intro har varit avgörande för vår förmåga att attrahera tech-specialister. Plattformen har inte bara hjälpt oss att hitta rätt kompetens utan också att förmedla vårt värderande som tech-arbetsgivare på ett mer effektivt sätt.&quot;
+          &quot;Definitivt! Intro är en möjliggörare. Intro är receptet för hur du ska lyckas med dina rekryteringar idag, traditionella rekryteringslösningar är passé. Att det är vi från Östgötatrafiken som hör av oss till kandidater och inte en mellanhand är en game-changer.&quot;
           <footer className="mt-4 text-sm text-gray-500 flex items-center gap-3">
             <div className="flex-shrink-0 w-6 h-6 rounded-full overflow-hidden">
               <img
-                src="/images/avatars/anders_scania.jpeg"
-                alt="Anders Nilsson"
+                src="/images/avatars/zeraldin_ostgotatrafiken.jpeg"
+                alt="Zeraldin Hajdarevic"
                 className="w-full h-full object-cover" />
 
             </div>
-            - Anders Nilsson, Technical Recruitment Lead, Scania
+            - Zeraldin Hajdarevic, Technical & IT-Infrastructure Manager, Östgötatrafiken
           </footer>
         </blockquote>
       </div>
