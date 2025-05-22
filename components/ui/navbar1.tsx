@@ -165,21 +165,23 @@ const Navbar1 = ({
     if (!isOpen && pendingHash) {
       console.log("[Nav] Menu closed, scrolling to:", pendingHash);
       
-      // Wait a small delay to ensure the menu is fully closed
-      setTimeout(() => {
-        const el = document.getElementById(pendingHash);
-        if (el) {
-          console.log("[Nav] Running scrollIntoView for:", pendingHash);
-          el.scrollIntoView({ behavior: "smooth" });
-          window.history.pushState(null, "", `#${pendingHash}`);
-          console.log("[Nav] Updated history.pushState");
-        } else {
-          console.log("[Nav] Element not found:", pendingHash);
-        }
-        
-        // Clear the pending hash
-        setPendingHash(null);
-      }, 100); // Small delay to ensure the menu is fully closed
+      // Wait two animation frames so Radix has removed its scroll-lock
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const el = document.getElementById(pendingHash);
+          if (el) {
+            console.log("[Nav] Running scrollIntoView for:", pendingHash);
+            el.scrollIntoView({ behavior: "smooth" });
+            window.history.pushState(null, "", `#${pendingHash}`);
+            console.log("[Nav] Updated history.pushState");
+          } else {
+            console.log("[Nav] Element not found:", pendingHash);
+          }
+          
+          // Clear the pending hash
+          setPendingHash(null);
+        });
+      });
     }
   }, [isOpen, pendingHash]);
   
@@ -328,13 +330,8 @@ const renderMobileMenuItem = (item: MenuItem, closeMenu?: () => void, setPending
       e.preventDefault();
       originalOnClick(e);
       
-      // Close the menu after a delay to allow custom navigation to start
-      if (closeMenu) {
-        setTimeout(() => {
-          console.log("[Nav] closing menu after custom onClick");
-          closeMenu();
-        }, 100);
-      }
+      // Close the menu immediately after custom onClick
+      closeMenu?.();
       return; // Exit early since the custom handler takes precedence
     }
     
