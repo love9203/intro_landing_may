@@ -36,6 +36,14 @@ const caseStudiesData: Gallery4Props = {
         "Upptäck hur Werlabs effektiviserade sin rekryteringsprocess och kunde fokusera på att intervjua kandidater istället för att leta efter dom.",
       href: "/articles/werlabs",
       image: "/images/case_studies/werlabs.svg",
+    },
+    {
+      id: "ninetech",
+      title: "Ninetech",
+      description:
+        "Hur Ninetech fick fler svar av kandidater och utökade sitt kandidatnätverk med Intro.",
+      href: "/articles/ninetech",
+      image: "/images/case_studies/ninetech_new.svg",
     }
   ],
 };

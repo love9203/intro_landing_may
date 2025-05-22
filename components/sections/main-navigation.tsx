@@ -117,7 +117,7 @@ const demoData: Navbar1Props = {
     {
       title: "Kundberättelser",
       url: "/#case-studies",
-      mobileUrl: "/articles",
+      mobileUrl: "/case-studies",
       onClick: async (e: React.MouseEvent) => {
         e.preventDefault();
         const currentPath = window.location.pathname;
@@ -129,7 +129,7 @@ const demoData: Navbar1Props = {
       },
       mobileOnClick: (e: React.MouseEvent) => {
         // For mobile, navigate directly to the case-studies page
-        window.location.href = '/articles';
+        window.location.href = '/case-studies';
       }
     },
   ],
