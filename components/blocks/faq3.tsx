@@ -13,7 +13,7 @@ const demoData = {
     },
     {
       id: "faq-2",
-      question: "Är Intro GDPR-anpassad och CCPA-kompatibel?",
+      question: "Är Intro GDPR- och CCPA-anpassad?",
       answer:
         "Ja, vi följer strikt både GDPR och CCPA. All data hanteras enligt gällande integritetslagar och föreskrifter.",
     },
@@ -25,7 +25,7 @@ const demoData = {
     },
     {
       id: "faq-4",
-      question: "Hur lång tid tar det att fylla en roll med Intro?",
+      question: "Hur lång tid tar det att fylla en roll?",
       answer:
         "Många av våra kunder bokar in sina första intervjuer redan inom några dagar från startad kampanj – hur lång tid det tar till anställning beror sedan helt på hur er rekryteringsprocess ser ut, vi har kunder som anställt redan efter 2 veckor.",
     },
@@ -43,7 +43,7 @@ const demoData = {
     },
     {
       id: "faq-7",
-      question: "Hur vet jag om Intro kommer funka för min roll?",
+      question: "Kommer det funka för min roll?",
       answer:
         "Gör en Search Request utifrån din roll så återkommer vi med en kostnadsfri kartläggning av din specifika pool - vi vet då bättre om det finns förutsättningar för ett lyckat projekt.",
     },

@@ -11,7 +11,7 @@ export default function CaseStudyLayout({ children }: CaseStudyLayoutProps) {
       <header className="pt-12 pb-0 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
           <nav className="mb-8">
-            <a href="/case-studies" className="text-sm text-indigo-600 hover:text-indigo-800">
+            <a href="/articles" className="text-sm text-indigo-600 hover:text-indigo-800">
               ← Back to Case Studies
             </a>
           </nav>

@@ -47,7 +47,7 @@ export default function CaseStudiesPage() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((study) => (
             <div key={study.slug} className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <Link href={`/case-studies/${study.slug}`} className="block space-y-4">
+              <Link href={`/articles/${study.slug}`} className="block space-y-4">
                 <div className="space-y-2">
                   <h2 className="text-xl font-semibold text-gray-900">{study.title}</h2>
                   <p className="text-gray-600">{study.description}</p>

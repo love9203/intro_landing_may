@@ -17,7 +17,7 @@ const testimonials = [
     image: '/images/avatars/linda_sse.jpg',
     text: 'Att kontakten görs via mail gör det mer effektivt när det gäller att sticka ut och få svar från eftertraktade kandidater. Dessutom är det praktiskt att ha allt samlat i ett system. Superbra kontaktperson (Viktor), han har varit fantastisk. Han har hört av sig till mig och haft koll på hur det gått för oss, vilket har varit jätteuppskattat. Han kom med feedback på hur mailen ser ut och följde upp. Han har varit en klippa att ha med.',
     name: 'Linda Ackered',
-    username: 'HR Business Partner, Handelshögskolan i Stockholm'
+    username: 'HR, Handelshögskolan i Stockholm'
   },
   {
     image: '/images/avatars/marcus_limetta.jpeg',
