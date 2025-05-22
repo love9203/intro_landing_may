@@ -15,8 +15,8 @@ const demoData = {
         tiers: [
           {
             id: "sourcing",
-            name: "Trip to Japan in april",
-            description: "Manus integrates comprehensive travel information to create personalized itineraries and produces a custom travel handbook tailored specifically for your Japanese adventure.",
+            name: "Golang i Stockholm",
+            description: "Fintech-startup använde Intro för att strukturerat bearbeta begränsad pool med Golang-utvecklare i Stockholm. Resultat: 5 hires på 8 månader.",
             features: [
               "Sök i 36+ källor",
               "Smart matchning",
@@ -25,12 +25,11 @@ const demoData = {
               "Specialist support",
             ],
             cta: "Börja nu",
-            icon: <Map className="h-5 w-5 text-gray-600" />,
-            image: "/images/japan_trip.jpg"
+            icon: <img src="/images/platform_images/golang.png" className="h-6 w-6" />,
           },
           {
             id: "sourcing-plus",
-            name: "Interactive course on the momentum theorem",
+            name: "Python/Django - Göteborg",
             description: "Manus develops engaging video presentations for middle school educators, clearly explaining the momentum theorem through accessible and educational content.",
             features: [
               "Uppstart inom 24 timmar",
@@ -38,13 +37,12 @@ const demoData = {
               "Anställning inom några veckor",
             ],
             cta: "Uppgradera",
-            icon: <BookOpen className="h-5 w-5 text-gray-600" />,
-            image: "/images/momentum_course.jpg"
+            icon: <img src="/images/platform_images/django.png" className="h-6 w-6" />,
           },
           {
             id: "talent-pool-plus",
-            name: "Comparative analysis of insurance policies",
-            description: "Looking to compare insurance options? Manus generates clear, structured comparison tables highlighting key policy information with optimal recommendations.",
+            name: "Fullstack Java - Helsinki",
+            description: "Finskt IT-konsultbolag rekryterade 7 Fullstack Java-utvecklare på 12 månader. Erfarenhetsnivå mellan 5-10 år.",
             features: [
               "Allt i Talent Pool",
               "Team samarbete",
@@ -53,13 +51,12 @@ const demoData = {
               "Priority support",
             ],
             cta: "Uppgradera",
-            icon: <BarChart2 className="h-5 w-5 text-gray-600" />,
-            image: "/images/insurance_analysis.jpg"
+            icon: <img src="/images/platform_images/java.png" className="h-6 w-6" />,
           },
           {
             id: "enterprise",
-            name: "B2B supplier sourcing",
-            description: "Manus conducts comprehensive research across extensive networks to identify the most suitable suppliers for your specific requirements. As your dedicated agent, Manus works exclusively in your best interest.",
+            name: ".NET Fullstack - Göteborg",
+            description: "Konsultbolag med nystartat kontor i Göteborg rekryterade 5 .NET Fullstack-utvecklare på 6 månader. Erfarenhetsnivå mellan 8-15 år. Tidigare konsulterfarenhet.",
             features: [
               "Allt i Talent Pool+",
               "Dedikerad specialist",
@@ -68,8 +65,7 @@ const demoData = {
               "SLA support",
             ],
             cta: "Kontakta oss",
-            icon: <Database className="h-5 w-5 text-gray-600" />,
-            image: "/images/supplier_sourcing.jpg"
+            icon: <img src="/images/platform_images/dotnet.png" className="h-6 w-6" />,
           },
         ],
       }

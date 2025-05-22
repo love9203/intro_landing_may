@@ -45,11 +45,11 @@ interface UseCaseFeatureProps {
 function TierCard({ tier }: { tier: PricingTier }) {
   return (
     <article 
-      className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all focus-within:ring-2 focus-within:ring-primary"
+      className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all focus-within:ring-2 focus-within:ring-primary h-full flex flex-col"
       role="group" 
       aria-labelledby={`tier-${tier.id}-title`}
     >
-      <div className="p-3 sm:p-4 md:p-5">
+      <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow">
         <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full mb-2 sm:mb-3">
           {tier.icon || (
             <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" aria-hidden="true" />
@@ -59,11 +59,11 @@ function TierCard({ tier }: { tier: PricingTier }) {
         <h3 id={`tier-${tier.id}-title`} className="text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2">
           {tier.name}
         </h3>
-        <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3 line-clamp-2 sm:line-clamp-3">
+        <p className={`text-gray-600 text-xs sm:text-sm ${!tier.image ? 'flex-grow' : 'mb-2 sm:mb-3'} line-clamp-5 sm:line-clamp-none`}>
           {tier.description}
         </p>
         
-        {tier.image ? (
+        {tier.image && (
           <div className="mt-2 mb-2 sm:mt-3 sm:mb-3 relative w-full aspect-video overflow-hidden rounded-md">
             <Image 
               src={tier.image} 
@@ -74,10 +74,6 @@ function TierCard({ tier }: { tier: PricingTier }) {
               blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiPjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNDc1IiBmaWxsPSIjZjFmMWYxIi8+PC9zdmc+"
               sizes="(max-width: 640px) 150px, (max-width: 768px) 200px, 300px"
             />
-          </div>
-        ) : (
-          <div className="mt-2 mb-2 sm:mt-3 sm:mb-3 relative w-full aspect-video bg-gray-100 rounded-md flex items-center justify-center">
-            <span className="text-xs sm:text-sm text-gray-400">No image available</span>
           </div>
         )}
       </div>
