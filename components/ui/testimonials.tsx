@@ -72,15 +72,15 @@ export function Testimonials({
             key={index}
             className="p-3 sm:p-5 relative bg-card border-border self-start h-auto">
 
-                <div className="flex items-center">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
                   <Image
                 src={testimonial.image}
                 alt={testimonial.name}
                 width={50}
                 height={50}
-                className="rounded-full" />
+                className="rounded-full mb-3 sm:mb-0" />
 
-                  <div className="flex flex-col pl-4">
+                  <div className="flex flex-col sm:pl-4">
                     <span className="font-semibold text-sm sm:text-base">
                       {testimonial.name}
                     </span>
