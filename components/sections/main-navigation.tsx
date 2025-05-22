@@ -21,8 +21,13 @@ const demoData: Navbar1Props = {
           icon: <Zap className="size-5 shrink-0" />,
           url: "/#product-features?tab=email",
           mobileUrl: "/product-features?tab=email",
-          onClick: (e: React.MouseEvent) => {
+          onClick: async (e: React.MouseEvent) => {
             e.preventDefault();
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/') {
+              window.location.href = '/#product-features?tab=email';
+              return;
+            }
             window.location.hash = '#product-features?tab=email';
             document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
           },
@@ -37,8 +42,13 @@ const demoData: Navbar1Props = {
           icon: <Sunset className="size-5 shrink-0" />,
           url: "/#product-features?tab=annonsering",
           mobileUrl: "/product-features?tab=annonsering",
-          onClick: (e: React.MouseEvent) => {
+          onClick: async (e: React.MouseEvent) => {
             e.preventDefault();
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/') {
+              window.location.href = '/#product-features?tab=annonsering';
+              return;
+            }
             window.location.hash = '#product-features?tab=annonsering';
             document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
           },
@@ -53,8 +63,13 @@ const demoData: Navbar1Props = {
           icon: <Trees className="size-5 shrink-0" />,
           url: "/#product-features?tab=kartlaggning",
           mobileUrl: "/product-features?tab=kartlaggning",
-          onClick: (e: React.MouseEvent) => {
+          onClick: async (e: React.MouseEvent) => {
             e.preventDefault();
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/') {
+              window.location.href = '/#product-features?tab=kartlaggning';
+              return;
+            }
             window.location.hash = '#product-features?tab=kartlaggning';
             document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
           },
