@@ -20,19 +20,15 @@ const demoData: Navbar1Props = {
           description: "3x konvertering jämfört med Linkedin",
           icon: <Zap className="size-5 shrink-0" />,
           url: "/#product-features?tab=email",
+          mobileUrl: "/product-features?tab=email",
           onClick: (e: React.MouseEvent) => {
             e.preventDefault();
-            const currentPath = window.location.pathname;
-            if (currentPath !== '/') {
-              // When navigating from another page, we need to store a flag in sessionStorage
-              // to indicate that we should scroll to the product-features section after the page loads
-              sessionStorage.setItem('scrollToProductFeatures', 'true');
-              window.location.href = '/#product-features?tab=email';
-            } else {
-              window.location.hash = '#product-features?tab=email';
-              document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
-              // No need to manually click the tab anymore as we're using state management
-            }
+            window.location.hash = '#product-features?tab=email';
+            document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+          },
+          mobileOnClick: (e: React.MouseEvent) => {
+            // For mobile, navigate directly to the product-features page
+            window.location.href = '/product-features?tab=email';
           },
         },
         {
@@ -40,19 +36,15 @@ const demoData: Navbar1Props = {
           description: "Annonsering med laserprecision, slipp inflöde av okvalificerade kandidater",
           icon: <Sunset className="size-5 shrink-0" />,
           url: "/#product-features?tab=annonsering",
+          mobileUrl: "/product-features?tab=annonsering",
           onClick: (e: React.MouseEvent) => {
             e.preventDefault();
-            const currentPath = window.location.pathname;
-            if (currentPath !== '/') {
-              // When navigating from another page, we need to store a flag in sessionStorage
-              // to indicate that we should scroll to the product-features section after the page loads
-              sessionStorage.setItem('scrollToProductFeatures', 'true');
-              window.location.href = '/#product-features?tab=annonsering';
-            } else {
-              window.location.hash = '#product-features?tab=annonsering';
-              document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
-              // No need to manually click the tab anymore as we're using state management
-            }
+            window.location.hash = '#product-features?tab=annonsering';
+            document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+          },
+          mobileOnClick: (e: React.MouseEvent) => {
+            // For mobile, navigate directly to the product-features page
+            window.location.href = '/product-features?tab=annonsering';
           },
         },
         {
@@ -60,19 +52,15 @@ const demoData: Navbar1Props = {
           description: "Din heltäckande lösning för att rekrytera seniora kandidater",
           icon: <Trees className="size-5 shrink-0" />,
           url: "/#product-features?tab=kartlaggning",
+          mobileUrl: "/product-features?tab=kartlaggning",
           onClick: (e: React.MouseEvent) => {
             e.preventDefault();
-            const currentPath = window.location.pathname;
-            if (currentPath !== '/') {
-              // When navigating from another page, we need to store a flag in sessionStorage
-              // to indicate that we should scroll to the product-features section after the page loads
-              sessionStorage.setItem('scrollToProductFeatures', 'true');
-              window.location.href = '/#product-features?tab=kartlaggning';
-            } else {
-              window.location.hash = '#product-features?tab=kartlaggning';
-              document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
-              // No need to manually click the tab anymore as we're using state management
-            }
+            window.location.hash = '#product-features?tab=kartlaggning';
+            document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+          },
+          mobileOnClick: (e: React.MouseEvent) => {
+            // For mobile, navigate directly to the product-features page
+            window.location.href = '/product-features?tab=kartlaggning';
           },
         },
       ],
@@ -114,6 +102,7 @@ const demoData: Navbar1Props = {
     {
       title: "Kundberättelser",
       url: "/#case-studies",
+      mobileUrl: "/case-studies",
       onClick: async (e: React.MouseEvent) => {
         e.preventDefault();
         const currentPath = window.location.pathname;
@@ -123,6 +112,10 @@ const demoData: Navbar1Props = {
           document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' });
         }
       },
+      mobileOnClick: (e: React.MouseEvent) => {
+        // For mobile, navigate directly to the case-studies page
+        window.location.href = '/case-studies';
+      }
     },
   ],
   auth: {

@@ -5,15 +5,23 @@ import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cn } from "@/lib/utils";
 
 function CustomSheetContent({
+  // Explicitly destructure and ignore disableScrollLock so it doesn't get spread
+  disableScrollLock,
   className,
   children,
   side = "right",
   hideCloseButton = false,
+  title,
+  description,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: "top" | "right" | "bottom" | "left";
   hideCloseButton?: boolean;
+  disableScrollLock?: boolean;
+  title: string;
+  description?: string;
 }) {
+
   return (
     <SheetPrimitive.Portal>
       <SheetPrimitive.Overlay
@@ -35,8 +43,14 @@ function CustomSheetContent({
             "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t",
           className
         )}
-        {...props}
+        {...props} // now guaranteed not to include disableScrollLock
       >
+        <SheetPrimitive.Title className="sr-only">{title}</SheetPrimitive.Title>
+        {description && (
+          <SheetPrimitive.Description className="sr-only">
+            {description}
+          </SheetPrimitive.Description>
+        )}
         {children}
         {!hideCloseButton && (
           <SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">

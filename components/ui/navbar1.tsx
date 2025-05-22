@@ -28,10 +28,12 @@ import { CustomSheetContent } from "@/components/ui/custom-sheet";
 export interface MenuItem {
   title: string;
   url: string;
+  mobileUrl?: string;
   description?: string;
   icon?: React.ReactElement;
   items?: MenuItem[];
   onClick?: (e: React.MouseEvent) => void;
+  mobileOnClick?: (e: React.MouseEvent) => void;
 }
 
 export interface Navbar1Props {
@@ -60,101 +62,16 @@ export interface Navbar1Props {
 
 const Navbar1 = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
-    src: "https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=100",
-    alt: "logo",
-    title: "Shadcnblocks.com"
+    url: "/",
+    src: "/images/intro_logo.svg",
+    alt: "Intro",
+    title: "Intro"
   },
-  menu = [
-  {
-    title: "Products",
-    url: "#",
-    items: [
-    {
-      title: "Intro Email",
-      description: "Nå igenom bruset med smarta emailsekvenser",
-      icon: <Mail className="size-5 shrink-0" />,
-      url: "/#product-features?tab=email",
-      onClick: (e) => {
-        e.preventDefault();
-        navigateToTab('product-features', '[data-tab="email"]');
-      }
-    },
-    {
-      title: "Blog",
-      description: "The latest industry news, updates, and info",
-      icon: <Book className="size-5 shrink-0" />,
-      url: "#"
-    },
-    {
-      title: "Company",
-      description: "Our mission is to innovate and empower the world",
-      icon: <Trees className="size-5 shrink-0" />,
-      url: "#"
-    },
-    {
-      title: "Careers",
-      description: "Browse job listing and discover our workspace",
-      icon: <Sunset className="size-5 shrink-0" />,
-      url: "#"
-    },
-    {
-      title: "Support",
-      description:
-      "Get in touch with our support team or visit our community forums",
-      icon: <Zap className="size-5 shrink-0" />,
-      url: "#"
-    }]
-
-  },
-  {
-    title: "Resources",
-    url: "#",
-    items: [
-    {
-      title: "Help Center",
-      description: "Get all the answers you need right here",
-      icon: <Zap className="size-5 shrink-0" />,
-      url: "#"
-    },
-    {
-      title: "Contact Us",
-      description: "We are here to help you with any questions you have",
-      icon: <Sunset className="size-5 shrink-0" />,
-      url: "#"
-    },
-    {
-      title: "Status",
-      description: "Check the current status of our services and APIs",
-      icon: <Trees className="size-5 shrink-0" />,
-      url: "#"
-    },
-    {
-      title: "Terms of Service",
-      description: "Our terms and conditions for using our services",
-      icon: <Book className="size-5 shrink-0" />,
-      url: "#"
-    }]
-
-  },
-  {
-    title: "Pricing",
-    url: "#"
-  },
-  {
-    title: "Blog",
-    url: "#"
-  }],
-
-  mobileExtraLinks = [
-  { name: "Press", url: "#" },
-  { name: "Contact", url: "#" },
-  { name: "Imprint", url: "#" },
-  { name: "Sitemap", url: "#" }],
-
+  menu = [],
+  mobileExtraLinks = [],
   auth = {
-    login: { text: "Log in", url: "#" },
-    signup: { text: "Sign up", url: "#" }
+    login: { text: "Logga in", url: "#" },
+    signup: { text: "Boka demo", url: "#" }
   }
 }: Navbar1Props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -163,24 +80,16 @@ const Navbar1 = ({
   // Effect to handle scrolling when the menu closes
   React.useEffect(() => {
     if (!isOpen && pendingHash) {
-      console.log("[Nav] Menu closed, scrolling to:", pendingHash);
-      
-      // Wait two animation frames so Radix has removed its scroll-lock
+      // Use requestAnimationFrame to ensure DOM updates have completed
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          const el = document.getElementById(pendingHash);
-          if (el) {
-            console.log("[Nav] Running scrollIntoView for:", pendingHash);
-            el.scrollIntoView({ behavior: "smooth" });
-            window.history.pushState(null, "", `#${pendingHash}`);
-            console.log("[Nav] Updated history.pushState");
-          } else {
-            console.log("[Nav] Element not found:", pendingHash);
-          }
-          
+        const element = document.getElementById(pendingHash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          // Update URL hash without triggering a scroll
+          window.history.pushState(null, "", `#${pendingHash}`);
           // Clear the pending hash
           setPendingHash(null);
-        });
+        }
       });
     }
   }, [isOpen, pendingHash]);
@@ -223,7 +132,7 @@ const Navbar1 = ({
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
-              <CustomSheetContent hideCloseButton={true} className="overflow-y-auto px-6 py-8">
+              <CustomSheetContent hideCloseButton={true} disableScrollLock={true} className="overflow-y-auto px-6 py-8" title="Menu" description="Navigation menu">
                 <div className="flex items-center justify-between mb-8">
                   <Link href={logo.url}>
                     <Image src={logo.src} width={96} height={40} className="w-24 h-10" alt={logo.alt} />
@@ -242,6 +151,11 @@ const Navbar1 = ({
                   </Accordion>
 
                   <div className="flex flex-col gap-4 mt-2 border-t pt-6">
+                    {menu.map((item) => (
+                      <Button asChild variant="outline" onClick={() => setIsOpen(false)} key={item.title}>
+                        <Link href={item.mobileUrl || item.url} onClick={item.mobileOnClick || item.onClick}>{item.title}</Link>
+                      </Button>
+                    ))}
                     <Button asChild variant="outline" onClick={() => setIsOpen(false)}>
                       <Link href={auth.login.url}>{auth.login.text}</Link>
                     </Button>
@@ -271,7 +185,7 @@ const renderMenuItem = (item: MenuItem) => {
                 <NavigationMenuLink asChild>
                   <Link
                   className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                  href={subItem.url}
+                  href={subItem.mobileUrl || subItem.url}
                   onClick={subItem.onClick}>
 
                     {subItem.icon}
@@ -299,7 +213,7 @@ const renderMenuItem = (item: MenuItem) => {
     <Link
       key={item.title}
       className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground my-auto"
-      href={item.url}
+      href={item.mobileUrl || item.url}
       onClick={item.onClick}>
 
       {item.title}
@@ -321,22 +235,26 @@ const renderMobileMenuItem = (item: MenuItem, closeMenu?: () => void, setPending
     url: string,
     originalOnClick?: (e: React.MouseEvent) => void
   ) => {
-    console.log("[Nav] clicked:", url);
     const hash = extractHash(url);
     
     // If it has a custom onClick handler, run it first
     if (originalOnClick) {
-      console.log("[Nav] calling originalOnClick");
       e.preventDefault();
       originalOnClick(e);
       
-      // Close the menu immediately after custom onClick
-      closeMenu?.();
-      return; // Exit early since the custom handler takes precedence
+      // Still queue the hash if this link also has a hash
+      if (hash) {
+        if (typeof setPendingHash === 'function') {
+          setPendingHash(hash);
+        }
+      }
+      
+      // Close the menu with a slight delay to ensure the onClick completes
+      setTimeout(() => closeMenu?.(), 150);
+      return;
     }
     
     if (hash) {
-      console.log("[Nav] hash link, will scroll to:", hash);
       e.preventDefault();
       
       // Store the hash in the parent component's state
@@ -347,7 +265,7 @@ const renderMobileMenuItem = (item: MenuItem, closeMenu?: () => void, setPending
       // Close the menu
       closeMenu?.();
     } else {
-      console.log("[Nav] normal link, closing immediately");
+      // Regular link, just close the menu
       closeMenu?.();
     }
   };
@@ -363,8 +281,9 @@ const renderMobileMenuItem = (item: MenuItem, closeMenu?: () => void, setPending
           <Link
             key={subItem.title}
             className="flex select-none gap-4 rounded-md p-3 my-1 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-            href={subItem.url}
-            onClick={(e) => handleLinkClick(e, subItem.url, subItem.onClick)}
+            href={subItem.mobileUrl || subItem.url}
+            scroll={false}
+            onClick={(e) => handleLinkClick(e, subItem.mobileUrl || subItem.url, subItem.mobileOnClick || subItem.onClick)}
           >
             {subItem.icon}
             <div>
@@ -386,9 +305,10 @@ const renderMobileMenuItem = (item: MenuItem, closeMenu?: () => void, setPending
   return (
     <Link
       key={item.title}
-      href={item.url}
+      href={item.mobileUrl || item.url}
+      scroll={false}
       className="font-semibold py-2 px-1 block text-base"
-      onClick={(e) => handleLinkClick(e, item.url, item.onClick)}
+      onClick={(e) => handleLinkClick(e, item.mobileUrl || item.url, item.mobileOnClick || item.onClick)}
     >
       {item.title}
     </Link>

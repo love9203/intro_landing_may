@@ -157,10 +157,19 @@ function ProductFeatures() {
 
   // Function to handle hash changes and tab selection
   const handleHashChange = useCallback(() => {
-    if (typeof window !== 'undefined' && window.location.hash.includes('#product-features')) {
-      console.log("Hash changed, checking tab parameter");
-      const urlParams = new URLSearchParams(window.location.hash.split('?')[1] || '');
-      const tabParam = urlParams.get('tab');
+    if (typeof window !== 'undefined') {
+      console.log("Checking tab parameter");
+      
+      // Check for query parameters (standalone page)
+      const queryParams = new URLSearchParams(window.location.search);
+      const queryTabParam = queryParams.get('tab');
+      
+      // Check for hash parameters (on main page)
+      const hashParams = new URLSearchParams(window.location.hash.split('?')[1] || '');
+      const hashTabParam = hashParams.get('tab');
+      
+      // Use query param first, fall back to hash param
+      const tabParam = queryTabParam || hashTabParam;
       console.log("Tab parameter:", tabParam);
       
       if (tabParam === 'email') {
@@ -174,11 +183,13 @@ function ProductFeatures() {
         setSelectedTab("tab-1");
       }
       
-      // Scroll to the section
-      setTimeout(() => {
-        console.log("Scrolling to product-features section");
-        document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      // Scroll to the section if we're on the main page with hash navigation
+      if (window.location.hash.includes('#product-features')) {
+        setTimeout(() => {
+          console.log("Scrolling to product-features section");
+          document.getElementById('product-features')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
     }
   }, []);
   

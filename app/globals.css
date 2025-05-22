@@ -112,6 +112,13 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Undo Radix's inline scroll-lock */
+html[style*="overflow:hidden"],
+body[style*="overflow:hidden"] {
+  overflow: visible !important;
+  touch-action: auto !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
