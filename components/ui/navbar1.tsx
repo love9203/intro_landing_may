@@ -151,14 +151,6 @@ const Navbar1 = ({
                   </Accordion>
 
                   <div className="flex flex-col gap-4 mt-2 border-t pt-6">
-                    {menu.map((item) => (
-                      <Button asChild variant="outline" onClick={() => setIsOpen(false)} key={item.title}>
-                        <Link href={item.mobileUrl || item.url} onClick={item.mobileOnClick || item.onClick}>{item.title}</Link>
-                      </Button>
-                    ))}
-                    <Button asChild variant="outline" onClick={() => setIsOpen(false)}>
-                      <Link href={auth.login.url}>{auth.login.text}</Link>
-                    </Button>
                     <Button asChild onClick={() => setIsOpen(false)}>
                       <Link href={auth.signup.url}>{auth.signup.text}</Link>
                     </Button>
