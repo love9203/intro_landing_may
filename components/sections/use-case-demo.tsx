@@ -2,9 +2,9 @@ import { Users, Building2, Map, BookOpen, BarChart2, Search, Database, LineChart
 import { UseCaseFeature } from "@/components/ui/use-case-feature"
 
 const demoData = {
-  badge: "Use Cases",
-  heading: "Välj den lösning som passar dig bäst",
-  description: "Vi erbjuder olika lösningar för olika behov",
+  badge: "Användningsområden",
+  heading: "Intro anpassar sig efter ditt behov",
+  description: "Utforska hur våra tusentals användare nyttjar Intro för att få maximal effekt i sin rekrytering och employer branding.",
   exploreMoreLink: "/use-cases",
   tabs: [
     {

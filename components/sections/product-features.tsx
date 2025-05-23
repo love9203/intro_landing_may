@@ -5,14 +5,14 @@ import { Feature108 } from "../ui/feature-108";
 import { useEffect, useState, useCallback } from "react";
 
 const demoData = {
-  badge: "Features",
+  badge: "Produkt",
   heading: "Intro Go-To-Talent är drivet av männsikor med AI.",
   description: "Hitta kandidater du tidigare inte upptäckt.",
   tabs: [
     {
       value: "tab-1",
       icon: <Check className="h-auto w-4 shrink-0" />,
-      label: "Fullständig kartläggning",
+      label: "Kartläggning",
       content: {
         badge: "Go-To-Talent",
         title: "Kartlägg din kandidatpool.",
@@ -66,7 +66,7 @@ const demoData = {
           "Open rate på över 90%",
           "Slipp manuellt uppföljningsarbete.",
           "A/B Testa olika budskap",
-          "Vi har hjälpt våra kunder att skicka över 100 000 email till kandidater genom åren, och vi vet vilka meddelanden som bäst konverterar till intervjuer – den expertisen får du på köpet när du väljer Intro.",
+          "Vi har hjälpt våra kunder att skicka över 100,000 email till kandidater genom åren, och vi vet vilka meddelanden som bäst konverterar till intervjuer – den expertisen får du på köpet när du väljer Intro.",
         ],
         buttonText: "Se Demo",
         images: [

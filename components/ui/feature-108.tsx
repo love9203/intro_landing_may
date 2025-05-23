@@ -139,7 +139,7 @@ const Feature108 = ({
 }: Feature108Props) => {
   return (
     <section className="pt-[32px] pb-16">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-4 text-center">
           <Badge variant="outline">{badge}</Badge>
           <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl">
@@ -152,13 +152,13 @@ const Feature108 = ({
           onValueChange={onTabChange}
           defaultValue={!selectedTab ? defaultValue : undefined}
           className="mt-8">
-          <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
+          <TabsList className="grid grid-cols-2 sm:flex sm:flex-wrap gap-5">
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
                 data-tab={tab.label.toLowerCase().replace(/\s+/g, '-')}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
+                className="flex items-center gap-2 rounded-xl px-2 py-2 text-xs sm:text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
               >
                 {tab.icon} {tab.label}
               </TabsTrigger>
@@ -197,7 +197,7 @@ const Feature108 = ({
                         clipRule="evenodd" />
 
                           </svg>
-                          <span className="text-muted-foreground">{feature}</span>
+                          <span className="text-muted-foreground text-sm md:text-base">{feature}</span>
                         </li>
                   )}
                     </ul>

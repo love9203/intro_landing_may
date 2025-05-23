@@ -29,8 +29,10 @@ function Hero() {
       <div className="container mx-auto">
         <div className="flex gap-2 items-center justify-center flex-col">
           <div>
-            <Button variant="secondary" size="sm" className="gap-4 mb-5">
-              Läs vår artikel om Go-To-Talent <MoveRight className="w-4 h-4" />
+            <Button variant="secondary" size="sm" className="gap-4 mb-5" asChild>
+              <Link href="/articles/werlabs">
+                Läs vår artikel om vår kund Werlabs <MoveRight className="w-4 h-4" />
+              </Link>
             </Button>
           </div>
           <div className="flex gap-2 flex-col px-4">

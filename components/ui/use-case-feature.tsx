@@ -131,9 +131,9 @@ export function UseCaseFeature({
                   >
                     <Button 
                       variant="outline" 
-                      className="rounded-full px-6 group"
+                      className="rounded-full px-10 group"
                     >
-                      Explore more use cases from our official collection
+                      Utforska fler tillämpningsområden
                       <svg 
                         className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" 
                         fill="none" 
