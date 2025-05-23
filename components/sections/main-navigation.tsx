@@ -94,13 +94,13 @@ const demoData: Navbar1Props = {
           title: "Kontakta oss",
           description: "Vi finns här för att hjälpa dig med alla frågor du har",
           icon: <Sunset className="size-5 shrink-0" />,
-          url: "/contact",
+          url: "/book-demo",
         },
         {
           title: "För kandidater",
           description: "Kontrollera aktuell status för våra tjänster",
           icon: <Trees className="size-5 shrink-0" />,
-          url: "/status",
+          url: "/opt_out",
         },
         {
           title: "Terms of Service",

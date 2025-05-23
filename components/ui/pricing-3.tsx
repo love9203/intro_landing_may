@@ -3,6 +3,7 @@
 import { CheckIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
 import { Badge } from '@/components/ui/badge';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 type Feature = boolean | string;
 
@@ -131,11 +132,12 @@ const PricingSection = () => {
               {plan.name === 'Standard' && 'Passar organisationer som löpande behöver tillsätta flera olika roller under året och vill ha full flexibilitet.'}
               {plan.name === 'Enterprise' && 'En helt anpassad lösning med obegränsat antal användare och roller – skräddarsydd efter din verksamhets unika behov.'}
             </p>
-            <button
-            className="mt-6 w-full rounded-lg px-4 py-2.5 text-sm font-semibold transition bg-black text-white hover:bg-gray-800">
-
-              Kontakta oss
-            </button>
+            <Link href="/book-demo" className="block">
+              <button
+              className="mt-6 w-full rounded-lg px-4 py-2.5 text-sm font-semibold transition bg-black text-white hover:bg-gray-800">
+                Kontakta oss
+              </button>
+            </Link>
 
             <table className="mt-8 w-full">
               <thead className="sr-only">

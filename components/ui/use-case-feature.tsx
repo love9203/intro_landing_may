@@ -50,9 +50,9 @@ function TierCard({ tier }: { tier: PricingTier }) {
       aria-labelledby={`tier-${tier.id}-title`}
     >
       <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow">
-        <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full mb-2 sm:mb-3">
+        <div className="flex items-center justify-center w-12 h-12 sm:w-10 sm:h-10 bg-gray-100 rounded-full mb-3 sm:mb-3 touch-manipulation">
           {tier.icon || (
-            <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600" aria-hidden="true" />
+            <CheckCircle className="h-6 w-6 sm:h-5 sm:w-5 text-gray-600" aria-hidden="true" />
           )}
         </div>
         

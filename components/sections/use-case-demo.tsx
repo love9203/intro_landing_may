@@ -30,7 +30,7 @@ const demoData = {
           {
             id: "sourcing-plus",
             name: "Python/Django - Göteborg",
-            description: "Manus develops engaging video presentations for middle school educators, clearly explaining the momentum theorem through accessible and educational content.",
+            description: "Startup i Göteborg rekryterade en Senior Fullstack-utvecklare med erfarenhet av Python/Django. Tid från inttierad kampanj till startdatum, 3 månader.",
             features: [
               "Uppstart inom 24 timmar",
               "Intresserade kandidater inom några dagar",
@@ -78,8 +78,8 @@ const demoData = {
         tiers: [
           {
             id: "social",
-            name: "Research on AI products for the clothing industry",
-            description: "Manus conducts comprehensive research on AI search products in the clothing industry, with comprehensive product analysis and competitive positioning.",
+            name: "Hemvändarkampanj Luleå",
+            description: "Konsultbolag i Luleå riktade en annonseringskampnj mot kandidater med rötterna från Norrbotten. Resultat: 1 kandidat som bodde i Stockholm tog besult att nappa på erbjudandet och flytta hem till Luleå",
             features: [
               "Innehållsstrategi",
               "Automatisk publicering",
@@ -89,12 +89,12 @@ const demoData = {
             ],
             cta: "Börja posta",
             icon: <Search className="h-5 w-5 text-gray-600" />,
-            image: "/images/ai_research.jpg"
+            image: "/images/platform_images/lulea.jpeg"
           },
           {
             id: "campaigns",
-            name: "List of YC companies",
-            description: "Manus expertly navigated the YC W25 database to identify all qualifying B2B companies, meticulously compiling this valuable information into a structured table.",
+            name: "5x inflöde av kvalifiserade kandidater",
+            description: "Konsultbolag i Stockholm nyttjade Intros riktade annonser mot Seniora .NET-utvecklare. Resulat, 5x inflöde av kvalifiserade kandidater jämfört med tidigare alternativ och flera anställningar.",
             features: [
               "Campaign strategy",
               "Creative production",
@@ -104,12 +104,11 @@ const demoData = {
             ],
             cta: "Starta kampanj",
             icon: <Database className="h-5 w-5 text-gray-600" />,
-            image: "/images/yc_companies.jpg"
           },
           {
             id: "job-ads",
-            name: "Online store operation analysis",
-            description: "Upload your Amazon store sales data and Manus delivers actionable insights, detailed visualizations, and customized strategies designed to increase your sales performance.",
+            name: "Riktad employer branding mot studenter från utvalda universitet",
+            description: "Konsultbolag utvecklade sin exponering mot ingenjörsstudenter från Industriell Ekonomi och Teknisk Fysik från KTH, Chalmers, Lund och LiU.",
             features: [
               "Multi-channel posting",
               "Smart targeting",
@@ -119,12 +118,12 @@ const demoData = {
             ],
             cta: "Börja annonsera",
             icon: <LineChart className="h-5 w-5 text-gray-600" />,
-            image: "/images/store_analysis.jpg"
+            image: "/images/platform_images/kth.webp"
           },
           {
             id: "enterprise-brand",
-            name: "Campaign explanation maps",
-            description: "Custom-designed visualization maps that bring historical events like the Battle of Lexington to life, enhancing student understanding through intuitive visual storytelling.",
+            name: "Seniora Konstruktörer inom Mekanik",
+            description: "Konsultbolag boostade sitt flöde av Seniora Mekanikkonstruktörer med en riktad annonseringskampanj.",
             features: [
               "Allt i Campaigns",
               "Brand strategy",
@@ -134,7 +133,6 @@ const demoData = {
             ],
             cta: "Kontakta oss",
             icon: <Map className="h-5 w-5 text-gray-600" />,
-            image: "/images/campaign_maps.jpg"
           },
         ],
       }
