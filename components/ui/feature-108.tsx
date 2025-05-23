@@ -152,7 +152,12 @@ const Feature108 = ({
           onValueChange={onTabChange}
           defaultValue={!selectedTab ? defaultValue : undefined}
           className="mt-8">
-          <TabsList className="grid grid-cols-2 sm:flex sm:flex-wrap gap-5">
+          <TabsList 
+            className="
+              grid grid-cols-2 justify-items-center gap-x-8 gap-y-5
+              sm:flex sm:flex-wrap sm:justify-between sm:gap-5 sm:px-10
+            "
+          >
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}

@@ -31,7 +31,7 @@ function Hero() {
           <div>
             <Button variant="secondary" size="sm" className="gap-4 mb-5" asChild>
               <Link href="/articles/werlabs">
-                Läs vår artikel om vår kund Werlabs <MoveRight className="w-4 h-4" />
+                Läs vår senaste case study om Werlabs <MoveRight className="w-4 h-4" />
               </Link>
             </Button>
           </div>
