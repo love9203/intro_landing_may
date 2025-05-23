@@ -90,7 +90,7 @@ export function Testimonials({
                   </div>
                 </div>
                 <div className="mt-5 mb-5">
-                  <p className="text-muted-foreground text-sm sm:text-base">
+                  <p className="text-muted-foreground text-xs sm:text-base">
                     {testimonial.text}
                   </p>
                 </div>

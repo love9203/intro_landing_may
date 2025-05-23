@@ -18,11 +18,11 @@ const placeholders = [
 
 
 const searchFields = [
-'Java Developer',
+'Java Fullstack',
 'Stockholm',
-'8+',
-'Consultancy experience',
-'Springboot, AWS'];
+'Minimum 8 års erfarenhet',
+'Konsulterfarenhet',
+'Springboot, AWS, React'];
 
 
 const CHAR_TYPING_SPEED = 50; // ms per character
@@ -175,7 +175,7 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
         type="submit" 
         className="w-full px-4 py-2 mt-2 sm:mt-4 bg-blue-600 text-white font-medium text-sm sm:text-base rounded-md hover:bg-blue-700 transition-colors"
       >
-        Find Candidates
+        Hitta kandidater
       </Button>
     </motion.form>
   );
