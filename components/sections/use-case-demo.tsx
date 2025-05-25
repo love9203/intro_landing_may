@@ -158,7 +158,7 @@ const demoData = {
           },
           {
             id: "campaigns",
-            name: "5x inflöde av kvalifiserade kandidater",
+            name: "5x inflöde av kvalificerade kandidater",
             location: "Stockholm",
             description: "Konsultbolag i Stockholm nyttjade Intros riktade annonser mot Seniora .NET-utvecklare. Resulat, 5x inflöde av kvalifiserade kandidater jämfört med tidigare alternativ och flera anställningar.",
             features: [
