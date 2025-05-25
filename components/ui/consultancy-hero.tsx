@@ -6,7 +6,7 @@ import { MoveRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-function Hero() {
+function ConsultancyHero() {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
     () => ["Fullstack", "Embedded", "Machine Learning", "Devops"],
@@ -37,7 +37,7 @@ function Hero() {
           </div>
           <div className="flex gap-2 flex-col px-4">
             <h1 className="text-[42px] sm:text-[46px] md:text-[68px] max-w-2xl tracking-tighter text-center font-regular leading-[1.1]">
-              <span className="text-spektr-cyan-50">Din heltäckande lösning för att växa ditt team inom</span>
+              <span className="text-spektr-cyan-50">Din heltäckande lösning för att växa ditt konsultbolag inom</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-2 md:pt-0">
                 &nbsp;
                 {titles.map((title, index) =>
@@ -57,7 +57,6 @@ function Hero() {
                     opacity: 0
                   }
                   }>
-
                     {title}
                   </motion.span>
                 )}
@@ -65,7 +64,7 @@ function Hero() {
             </h1>
 
             <p className="!text-[16px] !md:text-xl leading-tight tracking-tight text-muted-foreground max-w-2xl text-center mt-4 mb-4" style={{fontSize: '16px'}}>
-            Att rekrytera seniora kandidater är tufft. Intro förenklar detta genom ett helt nytt sätt att tänka med rekrytering - Go-To-Talent™️.  Hitta gömda kandidater, bygg awareness & konvertera 3x jämfört med traditionella metoder. 
+            Att lyckas rekrytera seniora kandidater är tufft. Intro förenklar detta genom ett helt nytt sätt att tänka med rekrytering - Go-To-Talent™️.  Hitta gömda kandidater, bygg awareness & konvertera 3x jämfört med traditionella metoder. 
             </p>
           </div>
           <div className="flex flex-row gap-3 mt-4 mb-[20px]">
@@ -83,7 +82,6 @@ function Hero() {
         </div>
       </div>
     </div>);
-
 }
 
-export { Hero };
+export { ConsultancyHero };

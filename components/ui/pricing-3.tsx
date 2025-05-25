@@ -123,7 +123,7 @@ const PricingSection = () => {
         {plans.map((plan, planIndex) =>
         <div
           key={plan.name}
-          className="rounded-2xl bg-white dark:bg-gray-900 p-8 md:p-10 transition shadow-sm hover:shadow-md"
+          className="rounded-2xl bg-gray-50 dark:bg-gray-900 p-8 md:p-10 transition shadow-sm hover:shadow-md"
           aria-label={plan.isPopular ? 'Most popular plan' : undefined}>
 
             <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{plan.name}</h3>

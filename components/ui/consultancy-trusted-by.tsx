@@ -2,11 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import { cn } from "@/lib/utils";
 
-interface TrustedByProps {
+interface ConsultancyTrustedByProps {
   className?: string;
 }
 
-export function TrustedBy({ className }: TrustedByProps) {
+export function ConsultancyTrustedBy({ className }: ConsultancyTrustedByProps) {
   const avatars = [
     '/images/avatars/elina_ninetech.jpeg',
     '/images/avatars/emelie_strategic9.jpeg',
@@ -30,7 +30,7 @@ export function TrustedBy({ className }: TrustedByProps) {
     <div className={cn("w-full px-4 pt-0 pb-16 mt-[20px]", className)}>
       <div className="max-w-7xl mx-auto">
         <h3 className="text-center text-sm text-gray-600 mb-6">
-        Skapat för rekryterande chefer med mycket på sitt bord
+          Skapat för konsultchefer med mycket på sitt bord
         </h3>
         
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-8">
