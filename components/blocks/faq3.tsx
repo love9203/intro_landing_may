@@ -1,4 +1,5 @@
 import { Faq3 } from "@/components/ui/faq3"
+import Link from "next/link"
 
 const demoData = {
   heading: "Vanliga frågor",
@@ -39,13 +40,24 @@ const demoData = {
       id: "faq-6",
       question: "Var kommer Intros data ifrån?",
       answer:
-        "Vi samlar data från över 20 olika källor för att ge dig den mest kompletta bilden av din kandidatmarknad.",
+        "Vi samlar data från över 36 olika källor för att ge dig den mest kompletta bilden av din kandidatmarknad.",
     },
     {
       id: "faq-7",
       question: "Kommer det funka för min roll?",
-      answer:
-        "Gör en Search Request utifrån din roll så återkommer vi med en kostnadsfri kartläggning av din specifika pool - vi vet då bättre om det finns förutsättningar för ett lyckat projekt.",
+      answer: (
+        <>
+          Gör en{" "}
+          <Link
+            href="https://search.intro.io/"
+            target="_blank"
+            className="text-primary hover:underline"
+          >
+            Search Request
+          </Link>{" "}
+          utifrån din roll så återkommer vi med en kostnadsfri kartläggning av din specifika pool - vi vet då bättre om det finns förutsättningar för ett lyckat projekt.
+        </>
+      ),
     },
   ],
   supportHeading: "Har du fler frågor?",

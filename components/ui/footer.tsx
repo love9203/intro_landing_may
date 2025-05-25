@@ -19,7 +19,7 @@ const Footer = () => {
             <h3 className="font-medium text-gray-900 mb-4">Support</h3>
             <ul className="space-y-3">
               <li><Link href="/help" className="text-gray-600 hover:text-gray-900">Help desk & FAQ</Link></li>
-              <li><Link href="/contact" className="text-gray-600 hover:text-gray-900">Kontakta oss</Link></li>
+              <li><Link href="/book-demo" className="text-gray-600 hover:text-gray-900">Kontakta oss</Link></li>
               <li><Link href="/opt_out" className="text-gray-600 hover:text-gray-900">För kandidater</Link></li>
               <li><Link href="/opt_out" className="text-gray-600 hover:text-gray-900">Opt-out</Link></li>
               <li><Link href="/data_protection" className="text-gray-600 hover:text-gray-900">Data protection</Link></li>

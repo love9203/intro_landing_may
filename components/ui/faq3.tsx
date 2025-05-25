@@ -1,11 +1,12 @@
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { ReactNode } from "react";
 
 interface FaqItem {
   id: string;
   question: string;
-  answer: string;
+  answer: ReactNode;
 }
 
 interface Faq3Props {

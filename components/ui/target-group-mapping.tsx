@@ -12,7 +12,7 @@ interface Platform {
 }
 
 const platforms: Platform[] = [
-{ name: "LinkedIn", icon: "/images/logos/linkedin.webp", color: "#0A66C2" },
+{ name: "Bitbucket", icon: "/images/logos/bitbucket.png", color: "#0A66C2" },
 { name: "GitHub", icon: "/images/logos/github.svg", color: "#24292F" },
 { name: "StackOverflow", icon: "/images/logos/stackoverflow.png", color: "#F48024" },
 { name: "Y Comb.", icon: "/images/logos/ycombinator.png", color: "#FF6600" },

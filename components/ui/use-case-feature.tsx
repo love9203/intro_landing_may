@@ -5,11 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, MapPin } from "lucide-react";
 
 interface PricingTier {
   id: string;
   name: string;
+  location?: string;
   description: string;
   features: string[];
   cta: string;
@@ -59,6 +60,12 @@ function TierCard({ tier }: { tier: PricingTier }) {
         <h3 id={`tier-${tier.id}-title`} className="text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2">
           {tier.name}
         </h3>
+        {tier.location && (
+          <div className="flex items-center text-gray-500 text-xs sm:text-sm mb-1 sm:mb-2">
+            <MapPin className="h-3 w-3 mr-1" />
+            <span>{tier.location}</span>
+          </div>
+        )}
         <p className={`text-gray-600 text-xs sm:text-sm ${!tier.image ? 'flex-grow' : 'mb-2 sm:mb-3'} line-clamp-5 sm:line-clamp-none`}>
           {tier.description}
         </p>
