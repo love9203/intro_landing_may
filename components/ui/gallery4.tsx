@@ -102,7 +102,7 @@ const Gallery4 = ({
 
   return (
     <section className="pb-32">
-      <div className="w-full px-4 sm:px-6 md:px-8">
+      <div className="container mx-auto px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">
@@ -135,10 +135,10 @@ const Gallery4 = ({
             </Button>
           </div>
         </div>
-      </div>
-      <div className="w-full">
+      
         <Carousel
           setApi={setCarouselApi}
+          className="-mx-5 lg:-mx-5"
           opts={{
             breakpoints: {
               "(max-width: 768px)": {
@@ -147,11 +147,11 @@ const Gallery4 = ({
             }
           }}>
 
-          <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
+          <CarouselContent className="ml-0">
             {items.map((item) =>
             <CarouselItem
               key={item.id}
-              className="max-w-[320px] pl-[20px] lg:max-w-[360px]">
+              className="max-w-[320px] pl-5 lg:max-w-[360px]">
 
                 <a href={item.href} className="group rounded-xl">
                   <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl md:aspect-[5/4] lg:aspect-[16/9]">
