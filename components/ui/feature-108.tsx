@@ -11,6 +11,7 @@ interface TabContent {
   description: string;
   features?: string[];
   buttonText: string;
+  secondButtonText?: string; // Added for the second button
   imageSrc?: string;
   imageAlt?: string;
   images?: Array<{
@@ -174,7 +175,7 @@ const Feature108 = ({
               <TabsContent
                 key={tab.value}
                 value={tab.value}
-                className="grid place-items-center gap-8 md:gap-20 lg:grid-cols-2 lg:gap-10"
+                className="grid items-start gap-8 md:gap-20 lg:grid-cols-2 lg:gap-10"
               >
 
                 <div className="flex flex-col gap-5">
@@ -207,9 +208,23 @@ const Feature108 = ({
                   )}
                     </ul>
                 }
-                  <Button className="mt-2.5 w-fit gap-2" size="lg">
-                    {tab.content.buttonText}
-                  </Button>
+                  <div className="flex flex-wrap gap-4 mt-2.5">
+                    <Button 
+                      className="w-fit gap-2" 
+                      size="lg"
+                      onClick={() => window.open('https://search.intro.io/', '_blank')}
+                    >
+                      Testa ett sök
+                    </Button>
+                    <Button 
+                      className="w-fit gap-2" 
+                      variant="outline"
+                      size="lg"
+                      onClick={() => window.location.href = '/book-demo'}
+                    >
+                      Boka demo
+                    </Button>
+                  </div>
                 </div>
                 <div className="feature-image bg-[#F8F9FD] rounded-2xl p-8 w-full max-w-3xl">
                   {tab.content.images ?

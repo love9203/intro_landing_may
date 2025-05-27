@@ -26,7 +26,8 @@ const demoData = {
           "Uppbackning från specialist för att fånga in nyanserna av din kravprofil",
           "Spara 10 timmar per månad"
         ],
-        buttonText: "Se Demo",
+        buttonText: "Testa ett sök",
+        secondButtonText: "Boka demo",
         imageSrc:
           "/images/platform_images/search_params.png",
         imageAlt: "Search parameters interface",
@@ -47,7 +48,8 @@ const demoData = {
           "Hitta kandidater som inte är aktiva på LinkedIn",
           "Upptäck talanger innan andra rekryterare"
         ],
-        buttonText: "See Tools",
+        buttonText: "Testa ett sök",
+        secondButtonText: "Boka demo",
         imageSrc:
           "/images/platform_images/Slice_20.png",
         imageAlt: "Team collaboration meeting",
@@ -68,7 +70,8 @@ const demoData = {
           "A/B Testa olika budskap",
           "Vi har hjälpt våra kunder att skicka över 100,000 email till kandidater genom åren, och vi vet vilka meddelanden som bäst konverterar till intervjuer – den expertisen får du på köpet när du väljer Intro.",
         ],
-        buttonText: "Se Demo",
+        buttonText: "Testa ett sök",
+        secondButtonText: "Boka demo",
         images: [
           {
             src: "/images/platform_images/email_1.jpeg",
@@ -99,7 +102,8 @@ const demoData = {
           "A/B-testning av annonsinnehåll",
           "Spara tid och få inga irrelevanta ansökningar som måste behandlas",
         ],
-        buttonText: "Läs Mer",
+        buttonText: "Testa ett sök",
+        secondButtonText: "Boka demo",
         imageSrc:
           "/images/platform_images/ads_werlabs.gif",
         imageAlt: "AI matchning system",
@@ -122,7 +126,8 @@ const demoData = {
           "Hjälp att hantera inkommande svar från kandidater vid behov",
           "Tillgänglig via telefon och mail när du behöver hjälp"
         ],
-        buttonText: "Se Statistik",
+        buttonText: "Testa ett sök",
+        secondButtonText: "Boka demo",
         imageSrc:
           "/images/platform_images/photo_team.jpeg",
         imageAlt: "Precisionsrekrytering dashboard",
@@ -142,7 +147,8 @@ const demoData = {
           "Direktkontakt med potentiella kandidater",
           "Ring eller SMSa kandidater",
         ],
-        buttonText: "Utforska",
+        buttonText: "Testa ett sök",
+        secondButtonText: "Boka demo",
         imageSrc:
           "/images/platform_images/chatting.png",
         imageAlt: "Tillväxt diagram",

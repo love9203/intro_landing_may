@@ -4,25 +4,28 @@ import { motion } from 'framer-motion';
 import { FC, useEffect, useState, useRef } from 'react';
 import '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 interface AnimatedSearchFormProps {
   triggerAnimation?: boolean;
 }
 
 const placeholders = [
-'Title',
-'Location',
-'Years of experience',
-'Background',
-'Skills'];
+  'Title',
+  'Location',
+  'Years of experience',
+  'Background',
+  'Skills'
+];
 
 
 const searchFields = [
-'Java Fullstack',
-'Stockholm',
-'Minimum 8 års erfarenhet',
-'Konsulterfarenhet',
-'Springboot, AWS, React'];
+  'Java Fullstack',
+  'Stockholm',
+  'Minimum 8 års erfarenhet',
+  'Konsulterfarenhet',
+  'Springboot, AWS, React'
+];
 
 
 const CHAR_TYPING_SPEED = 50; // ms per character
@@ -34,7 +37,7 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
   const [formValues, setFormValues] = useState<string[]>(Array(placeholders.length).fill(''));
   const [isTyping, setIsTyping] = useState(false);
   const [typingComplete, setTypingComplete] = useState<boolean[]>(Array(placeholders.length).fill(false));
-  
+
   // Use refs to safely handle intervals and timeouts
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -44,21 +47,21 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
     // Clean up any existing intervals/timeouts
     if (intervalRef.current) clearInterval(intervalRef.current);
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    
+
     if (triggerAnimation) {
       // Start typing animation
       setIsTyping(true);
-      
+
       // Reset all fields
       setFormValues(Array(placeholders.length).fill(''));
       setTypingComplete(Array(placeholders.length).fill(false));
       setCurrentField(0);
       setCurrentChar(0);
-      
+
       // Log for debugging
       console.log('Animation started, typingComplete reset:', Array(placeholders.length).fill(false));
     }
-    
+
     // Clean up on unmount
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
@@ -69,26 +72,26 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
   // Handle the typing animation
   useEffect(() => {
     if (!isTyping || !triggerAnimation) return;
-    
+
     console.log('Animation running for field:', currentField, placeholders[currentField]);
-    
+
     // Clear any existing interval
     if (intervalRef.current) clearInterval(intervalRef.current);
-    
+
     // Start a new typing interval
     intervalRef.current = setInterval(() => {
       setCurrentChar((prev) => {
         // If we've reached the end of the current field text
         if (prev >= searchFields[currentField].length) {
           console.log('Field completed:', currentField, placeholders[currentField]);
-          
+
           // Update form values when typing animation completes for a field
           setFormValues(prevValues => {
             const newValues = [...prevValues];
             newValues[currentField] = searchFields[currentField];
             return newValues;
           });
-          
+
           // Mark this field as complete
           setTypingComplete(prev => {
             const newState = [...prev];
@@ -96,11 +99,11 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
             console.log('Marking field as complete:', currentField, placeholders[currentField]);
             return newState;
           });
-          
+
           // Clear the current interval
           if (intervalRef.current) clearInterval(intervalRef.current);
           intervalRef.current = null;
-          
+
           // If there are more fields to animate
           if (currentField < searchFields.length - 1) {
             console.log('Moving to next field after delay');
@@ -117,7 +120,7 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
             console.log('All fields complete');
             setIsTyping(false);
           }
-          
+
           // Leave it at 'length' so the field stays visible
           return prev;
         }
@@ -139,7 +142,7 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
   };
 
   return (
-    <motion.form 
+    <motion.form
       className="w-full space-y-4 max-w-3xl mx-auto p-4 sm:p-6 bg-white rounded-lg shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -154,8 +157,8 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
               placeholder={placeholder}
               value={
                 // Show typing animation for current field
-                (index === currentField && isTyping && triggerAnimation) ? 
-                  searchFields[index].slice(0, currentChar) : 
+                (index === currentField && isTyping && triggerAnimation) ?
+                  searchFields[index].slice(0, currentChar) :
                 // Show completed text for fields that have been typed
                 formValues[index]
               }
@@ -170,10 +173,24 @@ export const AnimatedSearchForm: FC<AnimatedSearchFormProps> = ({ triggerAnimati
           </div>
         ))}
       </div>
-      
-      <Button 
-        type="submit" 
+
+      <Button
+        type="button"
         className="w-full px-4 py-2 mt-2 sm:mt-4 bg-blue-600 text-white font-medium text-sm sm:text-base rounded-md hover:bg-blue-700 transition-colors"
+        onClick={(e) => {
+          e.preventDefault();
+          // Find the second feature step and simply activate it without scrolling
+          const stepElements = document.querySelectorAll('.md\\:order-1 > div');
+          if (stepElements && stepElements.length > 1) {
+            // Simulate click to activate the step
+            const clickEvent = new MouseEvent('click', {
+              bubbles: true,
+              cancelable: true,
+              view: window
+            });
+            stepElements[1].dispatchEvent(clickEvent);
+          }
+        }}
       >
         Hitta kandidater
       </Button>

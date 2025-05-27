@@ -133,14 +133,14 @@ export function UseCaseFeature({
                 
                 <div className="flex justify-center mt-10">
                   <Link 
-                    href={exploreMoreLink} 
+                    href="https://search.intro.io/" 
                     passHref
                   >
                     <Button 
                       variant="outline" 
                       className="rounded-full px-10 group"
                     >
-                      Utforska fler tillämpningsområden
+                      Gör ett testsök på din roll
                       <svg 
                         className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" 
                         fill="none" 
