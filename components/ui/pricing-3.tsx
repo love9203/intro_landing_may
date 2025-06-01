@@ -37,7 +37,7 @@ const PricingSection = () => {
     name: 'Light',
     price: 'Kontakta oss',
     features: {
-      'Roller': '1-3',
+      'Roller': '1',
       'Kandidatkontakter/månad': '50',
       'Annonsplatser': '1',
       'Kartläggningar/månad': '1',
@@ -56,7 +56,7 @@ const PricingSection = () => {
     name: 'Standard',
     price: 'Kontakta oss',
     features: {
-      'Roller': '4-10',
+      'Roller': '2-5',
       'Kandidatkontakter/månad': 'Obegränsat',
       'Annonsplatser': '2',
       'Kartläggningar/månad': 'Obegränsat',
@@ -75,7 +75,7 @@ const PricingSection = () => {
     name: 'Enterprise',
     price: 'Kontakta oss',
     features: {
-      'Roller': '10+',
+      'Roller': 'Anpassningsbart',
       'Kandidatkontakter/månad': 'Obegränsat',
       'Annonsplatser': 'Obegränsat',
       'Kartläggningar/månad': 'Obegränsat',
