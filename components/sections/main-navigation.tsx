@@ -88,7 +88,7 @@ const demoData: Navbar1Props = {
           title: "Help Center & FAQ",
           description: "Få alla svar du behöver här",
           icon: <Zap className="size-5 shrink-0" />,
-          url: "/help",
+          url: "https://intro-svenska.bubbleapps.io/helpcenter",
         },
         {
           title: "Kontakta oss",
